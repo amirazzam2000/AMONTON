@@ -195,6 +195,24 @@
     font-size: 1.3rem;
   }
 }
+/* Login button styling */
+.login-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  margin-left: 16px; /* Adjust spacing from other nav items */
+}
+
+.login-icon {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);        /* Makes icon white—useful on dark headers */
+  transition: filter 0.3s ease;
+}
+
+.login-btn:hover .login-icon {
+  filter: invert(0.7);      /* Lighter hover effect */
+}
 
     </style>
 
@@ -213,6 +231,11 @@
       <a href="index.html#main-slider"  class="nav_link">Home</a>
       <a href="index.html#about-section" class="nav_link">About</a>
       <a href="index.html#contact-section"  class="nav_link">Contact</a>
+      <!-- Login Icon -->
+    <a href="https://amonton.softr.app/login" class="login-btn" aria-label="Login">
+      Login
+    </a>
+
     </nav>
   </div>
   <div class="mobile-nav-overlay"> <!-- Mobile Navigation Overlay -->
@@ -220,6 +243,9 @@
       <a href="index.html#main-slider"  class="nav_link">Home</a>
       <a href="index.html#about-section"  class="nav_link">About</a>
       <a href="index.html#contact-section"  class="nav_link">Contact</a>
+      <a href="https://amonton.softr.app/login" class="login-btn" aria-label="Login">
+        Login
+      </a>
     </nav>
   </div>
 </header>
