@@ -104,7 +104,7 @@ function initializeHeaderLogic() {
                 // allow default behavior (page reload or stay at top)
             } else {
                 // If it's a different page, navigate to that page and then scroll
-                e.preventDefault(); // Prevent immediate default navigation
+                e.preventDefault(); // Prevent immediate default navigation  
 
                 // Construct the full URL to navigate to
                 const navigateUrl = targetHash ? `${linkUrl.pathname}${targetHash}` : linkUrl.pathname;
