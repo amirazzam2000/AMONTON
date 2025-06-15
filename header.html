@@ -223,33 +223,3 @@
     </nav>
   </div>
 </header>
-
-<script>
-  function getFullBaseURL() {
-    const { origin, pathname } = window.location;
-    const pathParts = pathname.split('/');
-    const projectIndex = pathParts.indexOf('AMONTON');
-
-    if (projectIndex >= 0) {
-      const basePath = pathParts.slice(0, projectIndex + 1).join('/');
-      return `${origin}${basePath}/`;
-    } else {
-      return `${origin}/`;
-    }
-  }
-
-  function resetHref() {
-    const BASE = getFullBaseURL();
-    document.querySelectorAll('.nav_link').forEach(link => {
-      const hash = link.getAttribute('href').split('#')[1];
-      link.setAttribute('href', `${BASE}index.html#${hash}`);
-    });
-    const logo = document.querySelector('.logo');
-    if (logo) {
-      logo.setAttribute('href', `${BASE}index.html#main-slider`);
-    }
-  }
-
-  // Run on page load to fix initial hrefs
-  document.addEventListener('DOMContentLoaded', resetHref);
-</script>

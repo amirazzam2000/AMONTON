@@ -15,12 +15,34 @@ function smoothScroll(targetId) {
     }
 }
 
+function getFullBaseURL() {
+    const { origin, pathname } = window.location;
+    const parts = pathname.split('/');
+    const projectIndex = parts.indexOf('AMONTON');
+    if (projectIndex >= 0) {
+        return `${origin}/${parts.slice(1, projectIndex + 1).join('/')}/`;
+    } else {
+        return `${origin}/`;
+    }
+}
+
 // Function to initialize header-related JavaScript logic, including navigation
 function initializeHeaderLogic() {
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav .nav_link');
     const siteHeader = document.querySelector('.site-header');
+
+    const baseURL = getFullBaseURL();
+    document.querySelectorAll('.nav_link').forEach(link => {
+        const hash = link.getAttribute('href').split('#')[1];
+        link.setAttribute('href', `${baseURL}index.html#${hash}`);
+    });
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.setAttribute('href', `${baseURL}index.html#main-slider`);
+    }
+
 
     // Hamburger Menu Logic
     if (hamburgerMenu && mobileNavOverlay && mobileNavLinks) {
