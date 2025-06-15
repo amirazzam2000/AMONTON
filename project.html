@@ -247,7 +247,7 @@
   <script src="common_functions.js"></script>
 </head>
 <body>
-
+<base id="baseTag" href="/">
 
 <div id="header-placeholder"></div>
 <main class="project-page-main">
@@ -269,6 +269,19 @@
 
   const path = getUrlParameter('project');
   document.title = `${path} | AMONTON`;
+
+  function getBasePath() {
+    const pathParts = window.location.pathname.split('/');
+    const projectIndex = pathParts.indexOf('AMONTON');
+
+    if (projectIndex >= 0) {
+      return '/' + pathParts.slice(0, projectIndex + 1).join('/') + '/';
+    } else {
+      return '/';
+    }
+  }
+  document.getElementById('baseTag').setAttribute('href', getBasePath());
+
 
 
   // --- Project Page Content Loading Logic ---
