@@ -210,16 +210,46 @@
         <span class="bar"></span>
     </button>
     <nav class="main-nav"> <!-- Desktop Navigation -->
-      <a href="index.html#main-slider"  onclick="resetHref();" class="nav_link">Home</a>
-      <a href="index.html#about-section" onclick="resetHref();" class="nav_link">About</a>
-      <a href="index.html#contact-section"  onclick="resetHref();" class="nav_link">Contact</a>
+      <a href="index.html#main-slider"  class="nav_link">Home</a>
+      <a href="index.html#about-section" class="nav_link">About</a>
+      <a href="index.html#contact-section"  class="nav_link">Contact</a>
     </nav>
   </div>
   <div class="mobile-nav-overlay"> <!-- Mobile Navigation Overlay -->
     <nav class="mobile-nav">
-      <a href="index.html#main-slider"  onclick="resetHref();" class="nav_link">Home</a>
-      <a href="index.html#about-section"  onclick="resetHref();" class="nav_link">About</a>
-      <a href="index.html#contact-section"  onclick="resetHref();" class="nav_link">Contact</a>
+      <a href="index.html#main-slider"  class="nav_link">Home</a>
+      <a href="index.html#about-section"  class="nav_link">About</a>
+      <a href="index.html#contact-section"  class="nav_link">Contact</a>
     </nav>
   </div>
 </header>
+
+<script>
+  function getFullBaseURL() {
+    const { origin, pathname } = window.location;
+    const pathParts = pathname.split('/');
+    const projectIndex = pathParts.indexOf('AMONTON');
+
+    if (projectIndex >= 0) {
+      const basePath = pathParts.slice(0, projectIndex + 1).join('/');
+      return `${origin}${basePath}/`;
+    } else {
+      return `${origin}/`;
+    }
+  }
+
+  function resetHref() {
+    const BASE = getFullBaseURL();
+    document.querySelectorAll('.nav_link').forEach(link => {
+      const hash = link.getAttribute('href').split('#')[1];
+      link.setAttribute('href', `${BASE}index.html#${hash}`);
+    });
+    const logo = document.querySelector('.logo');
+    if (logo) {
+      logo.setAttribute('href', `${BASE}index.html#main-slider`);
+    }
+  }
+
+  // Run on page load to fix initial hrefs
+  document.addEventListener('DOMContentLoaded', resetHref);
+</script>
