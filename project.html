@@ -39,9 +39,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden; /* Ensure video/image doesn't overflow */
     }
 
-    .project-hero-image {
+    .project-hero-image,
+    .project-hero-video {
       width: 100%;
       height: 100%; /* Fill parent .project-hero-section */
       object-fit: cover;
@@ -146,19 +148,20 @@
 
     .project-dynamic-grid .grid-item {
         /* Default item style */
-        height: auto; /* Fixed height for all images in the grid */
+        height: auto; /* Fixed height for all images/videos in the grid */
     }
 
-    .project-dynamic-grid .grid-item img {
+    .project-dynamic-grid .grid-item img,
+    .project-dynamic-grid .grid-item video {
         width: 100%;
-        height: 500px; /* Fixed height for all images in the grid */
-        object-fit: cover; /* Zooms in and crops images to fit the fixed height */
+        height: 500px; /* Fixed height for all images/videos in the grid */
+        object-fit: cover; /* Zooms in and crops to fit the fixed height */
         display: block;
     }
 
     .project-dynamic-grid .grid-item p {
         text-align: left; /* Center text horizontally */
-        height: auto; /* Fixed height for all images in the grid */
+        height: auto;
         padding: 10px; /* Add some padding to text */
     }
 
@@ -194,7 +197,8 @@
       .project-dynamic-grid .grid-item {
         grid-column: span 1 !important; /* Ensure items don't span on mobile */
       }
-      .project-dynamic-grid .grid-item img {
+      .project-dynamic-grid .grid-item img,
+      .project-dynamic-grid .grid-item video {
         height: 500px; /* Adjust height for mobile */
       }
 
@@ -219,7 +223,8 @@
             grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
             gap: 30px;
         }
-        .project-dynamic-grid .grid-item img {
+        .project-dynamic-grid .grid-item img,
+        .project-dynamic-grid .grid-item video {
             height: 500px; /* Adjust height for tablets */
         }
     }
@@ -251,11 +256,9 @@
 
 <div id="header-placeholder"></div>
 <main class="project-page-main">
-  <!-- Project content will be dynamically loaded here by JavaScript -->
-</main>
+  </main>
 
 
-<!-- Footer -->
 <div id="footer-placeholder"></div>
 
 <script>
@@ -290,17 +293,9 @@
   // --- Project Page Content Loading Logic ---
   async function loadProjectContent() {
     const projectPageMain = document.querySelector('.project-page-main');
-    // In a real scenario, you'd extract the project ID from the URL to fetch the correct metadata.
-    // For this example, we assume 'metadata.json' is directly in the same directory.
-    // const urlParts = window.location.pathname.split('/');
-    // const projectFolderIndex = urlParts.indexOf('projects') + 1;
-    // let projectFolder = 'default-project';
-    // if (projectFolderIndex > 0 && projectFolderIndex < urlParts.length) {
-    //     projectFolder = urlParts[projectFolderIndex];
-    // }
 
     try {
-      const response = await fetch(`projects/${path}/metadata.json`); // Fetch metadata.json from the same directory
+      const response = await fetch(`projects/${path}/metadata.json`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -308,26 +303,40 @@
 
       projectPageMain.innerHTML = ''; // Clear existing content
 
-      // 1. Create Hero Section (Image + Overlay Text)
+      // 1. Create Hero Section (Image/Video + Overlay Text)
       const projectHeroSection = document.createElement('div');
       projectHeroSection.className = 'project-hero-section';
 
-      // Find the header image from the 'content' array
+      // Find the header media (video or image) from the 'content' array
+      const headerVideoContent = project.content.find(item => item.type === 'header-vid');
       const headerImageContent = project.content.find(item => item.type === 'header-img');
 
-      if (headerImageContent) {
+      if (headerVideoContent) {
+        const heroVideo = document.createElement('video');
+        heroVideo.className = 'project-hero-video';
+        heroVideo.src = `projects/${path}/${headerVideoContent.src}`;
+        heroVideo.alt = headerVideoContent.alt || project.title;
+        heroVideo.autoplay = true;
+        heroVideo.loop = true;
+        heroVideo.muted = true;
+        heroVideo.playsInline = true; // For iOS autoplay
+        heroVideo.onerror = function() {
+            this.onerror=null;
+            this.src='https://placehold.co/1400x700/eeeeee/333333?text=Project+Hero+Video+Missing';
+        };
+        projectHeroSection.appendChild(heroVideo);
+      } else if (headerImageContent) {
         const heroImage = document.createElement('img');
         heroImage.className = 'project-hero-image';
-        // Ensure image source is correctly resolved based on where your images are
         heroImage.src = `projects/${path}/${headerImageContent.src}`;
         heroImage.alt = headerImageContent.alt || project.title;
         heroImage.onerror = function() {
-            this.onerror=null; // Prevent infinite loop if fallback also fails
+            this.onerror=null;
             this.src='https://placehold.co/1400x700/eeeeee/333333?text=Project+Hero+Image+Missing';
         };
         projectHeroSection.appendChild(heroImage);
       } else {
-         // Fallback if no header image is specified
+         // Fallback if no header media is specified
          const noHeroDiv = document.createElement('div');
          noHeroDiv.style.height = '100%';
          noHeroDiv.style.width = '100%';
@@ -336,7 +345,7 @@
          noHeroDiv.style.justifyContent = 'center';
          noHeroDiv.style.alignItems = 'center';
          noHeroDiv.style.color = '#888';
-         noHeroDiv.textContent = 'No Hero Image Available';
+         noHeroDiv.textContent = 'No Hero Media Available';
          projectHeroSection.appendChild(noHeroDiv);
       }
 
@@ -371,17 +380,31 @@
       projectMetaDetails.appendChild(locationGroup);
 
       // PHOTOGRAPHY
-      const photographyGroup = document.createElement('div');
-      photographyGroup.className = 'detail-group';
-      let photographyValueText = 'Not specified';
-      if (Array.isArray(project.photography)) {
-          photographyValueText = project.photography.join(', ');
-      } else if (project.photography) {
-          photographyValueText = project.photography;
+      if (project.photography) {
+          const photographyGroup = document.createElement('div');
+          photographyGroup.className = 'detail-group';
+          let photographyValueText = 'Not specified';
+          if (Array.isArray(project.photography)) {
+              photographyValueText = project.photography.join(', ');
+          } else if (project.photography) {
+              photographyValueText = project.photography;
+          }
+          photographyGroup.innerHTML = `<div class="detail-label">PHOTOGRAPHY</div><div class="detail-value">${photographyValueText}</div>`;
+          projectMetaDetails.appendChild(photographyGroup);
       }
-      photographyGroup.innerHTML = `<div class="detail-label">PHOTOGRAPHY</div><div class="detail-value">${photographyValueText}</div>`;
-      projectMetaDetails.appendChild(photographyGroup);
 
+      if (project.visualization) {
+          const visualizationGroup = document.createElement('div');
+          visualizationGroup.className = 'detail-group';
+          let visualizationValueText = 'Not specified';
+          if (Array.isArray(project.visualization)) {
+              visualizationValueText = project.visualization.join(', ');
+          } else if (project.visualization) {
+              visualizationValueText = project.visualization;
+          }
+          visualizationGroup.innerHTML = `<div class="detail-label">VISUALIZATION</div><div class="detail-value">${visualizationValueText}</div>`;
+          projectMetaDetails.appendChild(visualizationGroup);
+      }
       // CATEGORY
       const categoryGroup = document.createElement('div');
       categoryGroup.className = 'detail-group';
@@ -406,18 +429,17 @@
       projectPageMain.appendChild(metaDescriptionContainer);
 
       // 3. The full-width separator line is intentionally removed as per previous request.
-      // If you wish to re-add a separator, you can add it here.
 
       // 4. Container for Dynamic Grid (constrained width, but grid fills it)
       const dynamicGridContainer = document.createElement('div');
-      dynamicGridContainer.className = 'content-section-container'; /* This keeps the content within max-width and centered */
+      dynamicGridContainer.className = 'content-section-container';
 
-      // Create the dynamic grid for images and text from 'content' array
+      // Create the dynamic grid for images, videos, and text from 'content' array
       const projectGrid = document.createElement('div');
       projectGrid.className = 'project-dynamic-grid';
 
-      // Filter content to include only 'img' and 'txt' types for the grid
-      const gridContent = project.content.filter(item => item.type === 'img' || item.type === 'txt');
+      // Filter content to include 'img', 'video', and 'txt' types for the grid
+      const gridContent = project.content.filter(item => item.type === 'img' || item.type === 'txt' || item.type === 'video');
 
       gridContent.forEach(item => {
         const gridItem = document.createElement('div');
@@ -436,10 +458,24 @@
             this.src='https://placehold.co/600x400/eeeeee/333333?text=Image+Missing';
           };
           gridItem.appendChild(imgElement);
+        } else if (item.type === 'video') {
+          const videoElement = document.createElement('video');
+          videoElement.src = `projects/${path}/${item.src}`;
+          videoElement.alt = item.alt || 'Project Video';
+          videoElement.autoplay = true; // Ensures autoplay for grid videos
+          videoElement.loop = true;     // Ensures looping for grid videos
+          videoElement.muted = true;    // Ensures muted playback for grid videos
+          videoElement.playsInline = true; // Important for iOS autoplay in grid videos
+          
+          videoElement.onerror = function() {
+            this.onerror=null;
+            this.src='https://placehold.co/600x400/eeeeee/333333?text=Video+Missing';
+          };
+          gridItem.appendChild(videoElement);
         } else if (item.type === 'txt') {
           const textElement = document.createElement('p');
           // Assuming 'src' holds the text content for 'txt' type
-          textElement.innerHTML = `projects/${path}/${item.src}` ? item.src.replace(/\n/g, '<br><br>') : 'No text content provided.';
+          textElement.innerHTML = item.src ? item.src.replace(/\n/g, '<br><br>') : 'No text content provided.';
           textElement.style.fontSize = '1.1rem';
           textElement.style.lineHeight = '1.8';
           textElement.style.color = '#333';
@@ -462,8 +498,6 @@
         </div>
       `;
     }
-    // Call checkHeaderBackground after content is loaded to ensure correct header state
-    
   }
 
 
@@ -473,7 +507,7 @@
     loadFooter();
   });
 
-  
+
 
 </script>
 </body>

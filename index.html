@@ -45,7 +45,9 @@
       position: relative; /* Needed for absolute positioning of overlay */
     }
 
-    .slide img {
+    /* Combined style for img and video within a slide */
+    .slide img,
+    .slide video {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -185,7 +187,8 @@
       line-height: 0; /* Remove extra space below image */
     }
 
-    .project-thumbnail-container img {
+    .project-thumbnail-container img,
+    .project-thumbnail-container video { /* Added video to this style */
       width: 100%;
       height: 500px; /* Reverted to default fixed height for project images */
       object-fit: cover; /* Ensure images cover the space */
@@ -193,7 +196,8 @@
       transition: transform 0.5s ease; /* Smooth zoom effect on hover */
     }
 
-    .project:hover .project-thumbnail-container img {
+    .project:hover .project-thumbnail-container img,
+    .project:hover .project-thumbnail-container video { /* Added video to this style */
       transform: scale(1.05); /* Slight zoom on image hover */
     }
 
@@ -249,7 +253,8 @@
       margin-bottom: 80px; /* Space below the divider */
     }
 
-    .divider-section img {
+    .divider-section img, /* Added video to this style */
+    .divider-section video {
       position: absolute;
       top: 0;
       left: 0;
@@ -292,7 +297,7 @@
       line-height: 1.2;
       text-transform: uppercase; /* Match the image's uppercase style */
       letter-spacing: 2px;
-      
+
     }
 
     .divider-title {
@@ -487,7 +492,8 @@
       }
 
 
-      .project-thumbnail-container img {
+      .project-thumbnail-container img,
+      .project-thumbnail-container video { /* Added video to this style */
         height: 300px; /* Adjust image height for mobile */
       }
 
@@ -567,7 +573,7 @@
       .section-title {
         font-size: 1.8rem;
       }
-      
+
       /* Responsive for slider overlay text on very small screens */
       .slide-title {
         font-size: 1.5rem;
@@ -634,10 +640,10 @@
   <section class="divider-section" id="dividerSection">
     </section>
 
-    
+
   <h2 class="section-title">Architecture</h2> <main class="project-list" id="CategoryProjectList">
     </main>
-  
+
   <section class="divider-section" id="dividerSection1">
     </section>
 
@@ -723,8 +729,8 @@
                 year: projectMetadata.year, // Get year from metadata.json
                 fullDescription: projectMetadata.thumbnail_desc, // You might want to use the full description from metadata.json
                 title: projectMetadata.title,
-                thumbnail: projectMetadata.thumbnail_photo
-
+                thumbnail_photo: projectMetadata.thumbnail_photo, // Get thumbnail_photo
+                thumbnail_video: projectMetadata.thumbnail_video // Get thumbnail_video
             };
             } catch (metadataError) {
             console.error(`Failed to load metadata for project ${project.folder}:`, metadataError);
@@ -735,7 +741,8 @@
                 year: project.year || 'N/A', // Fallback to index.json year or default
                 fullDescription: project.description, // Use description from index.json as fallback
                 title: project.title || 'Project Title',
-                thumbnail: project.thumbnail || 'https://placehold.co/600x400/eeeeee/333333?text=Project+Image'
+                thumbnail_photo: project.thumbnail || null, // Fallback for photo
+                thumbnail_video: null // No video fallback from old structure
             };
             }
         })
@@ -749,37 +756,58 @@
         const thumbnailContainer = document.createElement('div');
         thumbnailContainer.className = 'project-thumbnail-container';
 
-        const img = document.createElement('img');
-        // Use project.thumbnail if specified, otherwise default to photos.jpg
-        img.src = `projects/${project.folder}/${project.thumbnail || 'photos.jpg'}`;
-        img.alt = `${project.title} Thumbnail`;
-        img.onerror = function() {
-            this.onerror = null;
-            this.src = 'https://placehold.co/600x400/eeeeee/333333?text=Project+Image'; // Fallback placeholder
-        };
-        thumbnailContainer.appendChild(img);
-        
+        // Conditional rendering for thumbnail (photo or video)
+        if (project.thumbnail_photo) {
+            const img = document.createElement('img');
+            img.src = `projects/${project.folder}/${project.thumbnail_photo}`;
+            img.alt = `${project.title} Thumbnail`;
+            img.onerror = function() {
+                this.onerror = null;
+                this.src = 'https://placehold.co/600x400/eeeeee/333333?text=Project+Image+Missing'; // Fallback placeholder
+            };
+            thumbnailContainer.appendChild(img);
+        } else if (project.thumbnail_video) {
+            const video = document.createElement('video');
+            video.src = `projects/${project.folder}/${project.thumbnail_video}`;
+            video.alt = `${project.title} Thumbnail Video`;
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.playsInline = true;
+            video.onerror = function() {
+                this.onerror = null;
+                this.src = 'https://placehold.co/600x400/eeeeee/333333?text=Project+Video+Missing'; // Fallback placeholder
+            };
+            thumbnailContainer.appendChild(video);
+        } else {
+            // Fallback if neither photo nor video thumbnail is provided
+            const img = document.createElement('img');
+            img.src = 'https://placehold.co/600x400/eeeeee/333333?text=Thumbnail+Not+Available';
+            img.alt = 'Thumbnail not available';
+            thumbnailContainer.appendChild(img);
+        }
+
         const projectInfo = document.createElement('div');
         projectInfo.className = 'project-info';
-        
+
         const title = document.createElement('h3'); // Changed to h3 for semantic structure
         title.className = 'project-title';
         title.textContent = project.title;
         projectInfo.appendChild(title);
-        
+
         const description = document.createElement('p');
         description.className = 'project-description';
         // Use the fullDescription from metadata.json if available, otherwise fallback to project.description
         description.textContent = project.fullDescription || project.description;
         projectInfo.appendChild(description);
-        
+
         const meta = document.createElement('div');
         meta.className = 'project-meta';
         // Now using category and year fetched from project's metadata.json
         const categoryValueText = Array.isArray(project.category) ? project.category.join(' | ') : project.category || 'Not specified';
         meta.textContent = `${categoryValueText} | ${project.year ? project.year : ''}`; // Add category and year
         projectInfo.appendChild(meta);
-        
+
         if (project.size && window.innerWidth >= 768) {
             anchor.style.gridColumn = `span ${project.size}`;
         }
@@ -800,18 +828,38 @@
       try {
         const response = await fetch('slider/dividers.json');
         const dividers = await response.json();
-        
+
         const dividerSection = document.getElementById(divider_id);
         if (dividers.length > i) {
-          // For simplicity, let's just pick the first divider for now
-          const divider = dividers[i]; 
+          const divider = dividers[i];
           // Clear previous content if any, to avoid duplication on re-render
           dividerSection.innerHTML = '';
 
+          // Conditional rendering for image or video in divider
+          if (divider.video) {
+              const video = document.createElement('video');
+              video.src = `slider/${divider.video}`;
+              video.alt = "Divider Video";
+              video.autoplay = true;
+              video.loop = true;
+              video.muted = true;
+              video.playsInline = true;
+              video.onerror = function() {
+                  this.onerror = null;
+                  this.src = 'https://placehold.co/1920x600/eeeeee/333333?text=Divider+Video+Missing';
+              };
+              dividerSection.appendChild(video);
+          } else {
+              const img = document.createElement('img');
+              img.src = `slider/${divider.image}`;
+              img.alt = "Divider Image";
+              img.onerror = function() {
+                  this.onerror = null;
+                  this.src = 'https://placehold.co/1920x600/eeeeee/333333?text=Divider+Image+Missing';
+              };
+              dividerSection.appendChild(img);
+          }
 
-          const img = document.createElement('img');
-          img.src = `slider/${divider.image}`;
-          img.alt = "Divider Image";
 
           const overlay = document.createElement('div');
           overlay.className = 'divider-section-overlay';
@@ -822,7 +870,6 @@
           title.textContent = divider.text;
           content.appendChild(title);
 
-          dividerSection.appendChild(img);
           dividerSection.appendChild(overlay);
           content.classList.add('divider-content'); // Add this line
           dividerSection.appendChild(content);
@@ -865,16 +912,31 @@
           const slideDiv = document.createElement('div');
           slideDiv.className = 'slide';
 
-          // Create image element
-          const img = document.createElement('img');
-          img.src = `slider/${slide.image}`; // Use image path from JSON
-          img.alt = `Slide ${index + 1}`;
-          // Fallback image in case the specified image is not found
-          img.onerror = function() {
-            this.onerror=null;
-            this.src='https://placehold.co/1920x1080/eeeeee/333333?text=Slide+Image';
-          };
-          slideDiv.appendChild(img);
+          // Conditional rendering for image or video in slider
+          if (slide.video) {
+              const video = document.createElement('video');
+              video.src = `slider/${slide.video}`; // Use video path from JSON
+              video.alt = `Slide Video ${index + 1}`;
+              video.autoplay = true;
+              video.loop = true;
+              video.muted = true;
+              video.playsInline = true;
+              video.onerror = function() {
+                this.onerror=null;
+                this.src='https://placehold.co/1920x1080/eeeeee/333333?text=Slide+Video+Missing';
+              };
+              slideDiv.appendChild(video);
+          } else {
+              const img = document.createElement('img');
+              img.src = `slider/${slide.image}`; // Use image path from JSON
+              img.alt = `Slide Image ${index + 1}`;
+              img.onerror = function() {
+                this.onerror=null;
+                this.src='https://placehold.co/1920x1080/eeeeee/333333?text=Slide+Image+Missing';
+              };
+              slideDiv.appendChild(img);
+          }
+
 
           // Create overlay text if available
           if (slide.title || slide.body) { // Check for either title or body
@@ -887,7 +949,7 @@
                 h2.textContent = slide.title;
                 contentDiv.appendChild(h2);
             }
-            
+
             if (slide.body) {
                 const p = document.createElement('p');
                 p.className = 'slide-body'; /* Added class for body */

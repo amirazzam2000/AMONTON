@@ -1,5 +1,10 @@
 [
   {
+    "video": "video.mp4",
+    "title": "This  Is A video example",
+    "body": "ooo video "
+  },
+  {
     "image": "Domoblock_Gran Via Fdo el Católico_04.png",
     "title": "",
     "body": ""
