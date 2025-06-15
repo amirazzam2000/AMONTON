@@ -685,17 +685,21 @@
 
   <script>
 
-  function getBasePath() {
-      const pathParts = window.location.pathname.split('/');
+    function getFullBaseURL() {
+      const { origin, pathname } = window.location;
+      const pathParts = pathname.split('/');
       const projectIndex = pathParts.indexOf('AMONTON');
 
       if (projectIndex >= 0) {
-        return '/' + pathParts.slice(0, projectIndex + 1).join('/') + '/';
+        // Include everything up to and including 'AMONTON'
+        const basePath = pathParts.slice(0, projectIndex + 1).join('/');
+        return `${origin}${basePath}/`;
       } else {
-        return '/';
+        return `${origin}/`;
       }
     }
-    document.getElementById('baseTag').setAttribute('href', getBasePath());
+
+    document.getElementById('baseTag').setAttribute('href', getFullBaseURL());
 
    async function loadProjects(file, elem_id) {
     try {
