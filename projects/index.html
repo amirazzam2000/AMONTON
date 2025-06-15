@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Header Styling - Replicated from home.html */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 40px 20px;
+      background: transparent;
+      box-shadow: none;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .site-header.scrolled {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .site-header .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-header .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #ffffff;
+      user-select: none;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .site-header.scrolled .logo {
+      color: #1a1a1a;
+    }
+
+    /* Desktop Navigation */
+    .main-nav {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      margin: 0 0 0 30px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: color 0.3s ease;
+      padding: 5px 0;
+    }
+
+    .site-header.scrolled .main-nav a {
+      color: #1a1a1a;
+    }
+
+    .main-nav a:first-child {
+        margin-left: 0;
+    }
+
+    .main-nav a:hover {
+      color: #cccccc;
+    }
+
+    .site-header.scrolled .main-nav a:hover {
+      color: #777;
+    }
+
+    /* Hamburger Menu Icon */
+    .hamburger-menu {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      position: relative;
+      z-index: 101;
+    }
+
+    .hamburger-menu .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: #ffffff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .site-header.scrolled .hamburger-menu .bar {
+      background-color: #1a1a1a;
+    }
+
+    /* Mobile Navigation Overlay */
+    .mobile-nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .mobile-nav-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .mobile-nav a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-size: 1.5rem;
+      padding: 15px 0;
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+      color: #777;
+    }
+
+    /* --- Project Page Specific Styles --- */
+    /* Main wrapper for the whole project content area */
+    .project-page-main {
+      position: relative;
+      width: 100%; /* Ensure main spans full width */
+    }
+
+    /* Hero Section - full width, height for background image */
+    .project-hero-section {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full viewport height for hero section */
+      max-height: 100vh;
+      /* margin-top: -120px; Pulls section up under the fixed header */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .project-hero-image {
+      width: 100%;
+      height: 100%; /* Fill parent .project-hero-section */
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Text overlay on hero image */
+    .hero-text-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; /* Fill .project-hero-section */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10; /* Above image, below fixed header */
+      color: #ffffff; /* White text on hero image */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* For better readability */
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hero-text-overlay h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: inherit;
+    }
+
+    .hero-text-overlay .meta-info {
+      font-size: 0.9rem;
+      color: inherit;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Container for sections that should have constrained width and centering */
+    .content-section-container {
+      max-width: 1400px;
+      margin: 0 auto; /* Centers the container */
+      padding: 80px 40px; /* Standard padding */
+      width: 100%; /* Takes full width up to max-width */
+    }
+
+    .project-meta-and-description {
+      display: grid;
+      grid-template-columns: 1fr 2fr; /* 1/3 for meta, 2/3 for description on desktop */
+      gap: 60px; /* Gap between columns */
+      align-items: start; /* Align content to the top */
+    }
+
+    .project-meta-details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Spacing between meta items */
+    }
+
+    .project-meta-details .detail-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-meta-details .detail-label {
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+    .project-meta-details .detail-value {
+        font-size: 1rem;
+        color: #1a1a1a;
+    }
+
+    /* Full-width Separator Style - Removed red color and height */
+    .full-width-separator {
+        width: 100vw; /* Occupies full viewport width */
+        height: 0; /* No visible line */
+        background-color: transparent; /* No background color */
+        margin-left: calc(50% - 50vw); /* Pushes it to the far left edge */
+        margin-top: 40px; /* Space above the separator */
+        margin-bottom: 40px; /* Space below the separator */
+    }
+
+    .project-description-section {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    /* Grid for dynamic content spanning full width of its parent (.content-section-container) */
+    .project-dynamic-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 3 columns by default */
+        gap: 40px;
+        width: 100%; /* Takes full width of its parent content-section-container */
+    }
+
+    .project-dynamic-grid .grid-item {
+        /* Default item style */
+        height: auto; /* Fixed height for all images in the grid */
+    }
+
+    .project-dynamic-grid .grid-item img {
+        width: 100%;
+        height: 500px; /* Fixed height for all images in the grid */
+        object-fit: cover; /* Zooms in and crops images to fit the fixed height */
+        display: block;
+    }
+
+    .project-dynamic-grid .grid-item p {
+        text-align: left; /* Center text horizontally */
+        height: auto; /* Fixed height for all images in the grid */
+        padding: 10px; /* Add some padding to text */
+    }
+
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .site-header .main-nav {
+        display: none;
+      }
+      .site-header .hamburger-menu {
+        display: block;
+      }
+      .site-header .container {
+        justify-content: space-between;
+        width: 100%;
+      }
+      .site-header {
+        padding: 20px;
+        flex-direction: row;
+      }
+      .hamburger-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .hamburger-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      .project-hero-section {
+        height: 100vh; /* Smaller height on mobile */
+      }
+
+      .hero-text-overlay h1 {
+        font-size: 2.2rem;
+      }
+
+      .content-section-container {
+        padding: 60px 20px; /* Adjusted padding for mobile */
+      }
+
+      .project-meta-and-description {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 40px;
+      }
+
+      .project-description-section {
+        font-size: 1rem;
+      }
+
+      .project-dynamic-grid {
+        grid-template-columns: 1fr; /* Single column on mobile for dynamic grid */
+        gap: 30px;
+      }
+      .project-dynamic-grid .grid-item {
+        grid-column: span 1 !important; /* Ensure items don't span on mobile */
+      }
+      .project-dynamic-grid .grid-item img {
+        height: 500px; /* Adjust height for mobile */
+      }
+
+      .full-width-separator {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px) {
+        .content-section-container {
+            padding: 70px 30px;
+        }
+        .project-meta-and-description {
+            grid-template-columns: 1fr 2fr; /* Tablet layout */
+            gap: 40px;
+        }
+        .project-meta-details {
+            gap: 15px;
+        }
+        .project-dynamic-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+            gap: 30px;
+        }
+        .project-dynamic-grid .grid-item img {
+            height: 500px; /* Adjust height for tablets */
+        }
+    }
+
+    @media (max-width: 480px) {
+      .site-header {
+        padding: 15px 10px;
+      }
+      .mobile-nav a {
+        font-size: 1.3rem;
+      }
+      .project-hero-section {
+        /* margin-top: -90px; */
+      }
+      .content-section-container {
+        padding: 40px 15px;
+      }
+      .hero-text-overlay h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+      .hero-text-overlay .meta-info {
+        font-size: 0.8rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="/home.html" class="logo">AMONTON</a>
+    <button class="hamburger-menu" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <nav class="main-nav">
+      <a href="/home.html" class="nav_link">Home</a>
+      <a href="/about.html" class="nav_link">About</a>
+      <a href="/contact.html" class="nav_link">Contact</a>
+    </nav>
+  </div>
+  <div class="mobile-nav-overlay">
+    <nav class="mobile-nav">
+      <a href="/home.html" class="nav_link">Home</a>
+      <a href="/about.html" class="nav_link">About</a>
+      <a href="/contact.html" class="nav_link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="project-page-main">
+  <!-- Project content will be dynamically loaded here by JavaScript -->
+</main>
+
+<script>
+  // --- Header Scroll Logic (Replicated) ---
+  function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+  const siteHeader = document.querySelector('.site-header');
+  const path = getUrlParameter('project');
+
+  function checkHeaderBackground() {
+      if (window.scrollY > 50) {
+          siteHeader.classList.add('scrolled');
+          siteHeader.querySelectorAll('.logo, .main-nav a, .hamburger-menu .bar').forEach(el => {
+              if (el.classList.contains('logo') || el.classList.contains('nav_link') || el.classList.contains('bar')) {
+                  el.style.color = '#1a1a1a';
+                  if (el.classList.contains('bar')) el.style.backgroundColor = '#1a1a1a';
+              }
+          });
+      } else {
+          siteHeader.classList.remove('scrolled');
+          siteHeader.querySelectorAll('.logo, .main-nav a, .hamburger-menu .bar').forEach(el => {
+              if (el.classList.contains('logo') || el.classList.contains('nav_link') || el.classList.contains('bar')) {
+                  el.style.color = '#ffffff';
+                  if (el.classList.contains('bar')) el.style.backgroundColor = '#ffffff';
+              }
+          });
+      }
+  }
+
+  window.addEventListener('scroll', checkHeaderBackground);
+  window.addEventListener('load', checkHeaderBackground);
+
+
+  // --- Hamburger Menu Logic (Replicated) ---
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav .nav_link');
+
+  hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('is-active');
+    mobileNavOverlay.classList.toggle('is-open');
+    document.body.style.overflow = mobileNavOverlay.classList.contains('is-open') ? 'hidden' : '';
+  });
+
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerMenu.classList.remove('is-active');
+      mobileNavOverlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  mobileNavOverlay.addEventListener('click', (event) => {
+      if (event.target === mobileNavOverlay) {
+          hamburgerMenu.classList.remove('is-active');
+          mobileNavOverlay.classList.remove('is-open');
+          document.body.style.overflow = '';
+      }
+  });
+
+
+  // --- Project Page Content Loading Logic ---
+  async function loadProjectContent() {
+    const projectPageMain = document.querySelector('.project-page-main');
+    // In a real scenario, you'd extract the project ID from the URL to fetch the correct metadata.
+    // For this example, we assume 'metadata.json' is directly in the same directory.
+    // const urlParts = window.location.pathname.split('/');
+    // const projectFolderIndex = urlParts.indexOf('projects') + 1;
+    // let projectFolder = 'default-project';
+    // if (projectFolderIndex > 0 && projectFolderIndex < urlParts.length) {
+    //     projectFolder = urlParts[projectFolderIndex];
+    // }
+
+    try {
+      const response = await fetch(`${path}/metadata.json`); // Fetch metadata.json from the same directory
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const project = await response.json();
+
+      projectPageMain.innerHTML = ''; // Clear existing content
+
+      // 1. Create Hero Section (Image + Overlay Text)
+      const projectHeroSection = document.createElement('div');
+      projectHeroSection.className = 'project-hero-section';
+
+      // Find the header image from the 'content' array
+      const headerImageContent = project.content.find(item => item.type === 'header-img');
+
+      if (headerImageContent) {
+        const heroImage = document.createElement('img');
+        heroImage.className = 'project-hero-image';
+        // Ensure image source is correctly resolved based on where your images are
+        heroImage.src = `${path}/${headerImageContent.src}`;
+        heroImage.alt = headerImageContent.alt || project.title;
+        heroImage.onerror = function() {
+            this.onerror=null; // Prevent infinite loop if fallback also fails
+            this.src='https://placehold.co/1400x700/eeeeee/333333?text=Project+Hero+Image+Missing';
+        };
+        projectHeroSection.appendChild(heroImage);
+      } else {
+         // Fallback if no header image is specified
+         const noHeroDiv = document.createElement('div');
+         noHeroDiv.style.height = '100%';
+         noHeroDiv.style.width = '100%';
+         noHeroDiv.style.background = '#f0f0f0';
+         noHeroDiv.style.display = 'flex';
+         noHeroDiv.style.justifyContent = 'center';
+         noHeroDiv.style.alignItems = 'center';
+         noHeroDiv.style.color = '#888';
+         noHeroDiv.textContent = 'No Hero Image Available';
+         projectHeroSection.appendChild(noHeroDiv);
+      }
+
+      // Hero Text Overlay (Title and Meta-info)
+      const heroTextOverlay = document.createElement('div');
+      heroTextOverlay.className = 'hero-text-overlay';
+
+      const titleElement = document.createElement('h1');
+      titleElement.textContent = project.title;
+      heroTextOverlay.appendChild(titleElement);
+
+      const metaInfo = document.createElement('p');
+      metaInfo.className = 'meta-info';
+      metaInfo.textContent = `${Array.isArray(project.category) ? project.category.join(' | ') : project.category || 'Not specified'} | ${project.year || 'Not specified'}`;
+      heroTextOverlay.appendChild(metaInfo);
+
+      projectHeroSection.appendChild(heroTextOverlay);
+      projectPageMain.appendChild(projectHeroSection);
+
+      // 2. Container for Meta Details and Description (constrained width)
+      const metaDescriptionContainer = document.createElement('div');
+      metaDescriptionContainer.className = 'content-section-container project-meta-and-description';
+
+      // Left Column: Project Meta Details
+      const projectMetaDetails = document.createElement('div');
+      projectMetaDetails.className = 'project-meta-details';
+
+      // LOCATION
+      const locationGroup = document.createElement('div');
+      locationGroup.className = 'detail-group';
+      locationGroup.innerHTML = `<div class="detail-label">LOCATION</div><div class="detail-value">${project.location || 'Not specified'}</div>`;
+      projectMetaDetails.appendChild(locationGroup);
+
+      // PHOTOGRAPHY
+      const photographyGroup = document.createElement('div');
+      photographyGroup.className = 'detail-group';
+      let photographyValueText = 'Not specified';
+      if (Array.isArray(project.photography)) {
+          photographyValueText = project.photography.join(', ');
+      } else if (project.photography) {
+          photographyValueText = project.photography;
+      }
+      photographyGroup.innerHTML = `<div class="detail-label">PHOTOGRAPHY</div><div class="detail-value">${photographyValueText}</div>`;
+      projectMetaDetails.appendChild(photographyGroup);
+
+      // CATEGORY
+      const categoryGroup = document.createElement('div');
+      categoryGroup.className = 'detail-group';
+      const categoryValueText = Array.isArray(project.category) ? project.category.join(' | ') : project.category || 'Not specified';
+      categoryGroup.innerHTML = `<div class="detail-label">CATEGORY</div><div class="detail-value">${categoryValueText}</div>`;
+      projectMetaDetails.appendChild(categoryGroup);
+
+      // YEAR
+      const yearGroup = document.createElement('div');
+      yearGroup.className = 'detail-group';
+      yearGroup.innerHTML = `<div class="detail-label">YEAR</div><div class="detail-value">${project.year || 'Not specified'}</div>`;
+      projectMetaDetails.appendChild(yearGroup);
+
+      metaDescriptionContainer.appendChild(projectMetaDetails);
+
+      // Right Column: Project Description
+      const descriptionSection = document.createElement('div');
+      descriptionSection.className = 'project-description-section';
+      descriptionSection.innerHTML = `<p>${project.description ? project.description.replace(/\n/g, '<br><br>') : 'No description provided.'}</p>`;
+      metaDescriptionContainer.appendChild(descriptionSection);
+
+      projectPageMain.appendChild(metaDescriptionContainer);
+
+      // 3. The full-width separator line is intentionally removed as per previous request.
+      // If you wish to re-add a separator, you can add it here.
+
+      // 4. Container for Dynamic Grid (constrained width, but grid fills it)
+      const dynamicGridContainer = document.createElement('div');
+      dynamicGridContainer.className = 'content-section-container'; /* This keeps the content within max-width and centered */
+
+      // Create the dynamic grid for images and text from 'content' array
+      const projectGrid = document.createElement('div');
+      projectGrid.className = 'project-dynamic-grid';
+
+      // Filter content to include only 'img' and 'txt' types for the grid
+      const gridContent = project.content.filter(item => item.type === 'img' || item.type === 'txt');
+
+      gridContent.forEach(item => {
+        const gridItem = document.createElement('div');
+        gridItem.className = 'grid-item';
+        // Apply grid-column span based on 'size' property
+        if (item.size) {
+          gridItem.style.gridColumn = `span ${item.size}`;
+        }
+
+        if (item.type === 'img') {
+          const imgElement = document.createElement('img');
+          imgElement.src = `${path}/${item.src}`;
+          imgElement.alt = item.alt || 'Project Image';
+          imgElement.onerror = function() {
+            this.onerror=null;
+            this.src='https://placehold.co/600x400/eeeeee/333333?text=Image+Missing';
+          };
+          gridItem.appendChild(imgElement);
+        } else if (item.type === 'txt') {
+          const textElement = document.createElement('p');
+          // Assuming 'src' holds the text content for 'txt' type
+          textElement.innerHTML = `${path}/${item.src}` ? item.src.replace(/\n/g, '<br><br>') : 'No text content provided.';
+          textElement.style.fontSize = '1.1rem';
+          textElement.style.lineHeight = '1.8';
+          textElement.style.color = '#333';
+          gridItem.appendChild(textElement);
+        }
+        projectGrid.appendChild(gridItem);
+      });
+
+      dynamicGridContainer.appendChild(projectGrid);
+      projectPageMain.appendChild(dynamicGridContainer);
+
+    } catch (error) {
+      console.error('Failed to load project metadata:', error);
+      projectPageMain.innerHTML = `
+        <div style="text-align: center; padding: 50px; color: #cc0000;">
+          <h2>Error Loading Project</h2>
+          <p>Could not load details for this project. Please check the URL and the project's metadata.json file.</p>
+          <p>Details: ${error.message}</p>
+          <a href="home.html" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #1a1a1a; color: #ffffff; text-decoration: none; border-radius: 5px;">Go Back to Projects</a>
+        </div>
+      `;
+    }
+    // Call checkHeaderBackground after content is loaded to ensure correct header state
+    checkHeaderBackground();
+  }
+
+  document.addEventListener('DOMContentLoaded', loadProjectContent);
+
+</script>
+</body>
+</html>
