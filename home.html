@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studio Portfolio</title>
+  <title>AMONTON</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     /* Global Reset and Base Styles */
@@ -20,154 +20,6 @@
       line-height: 1.6; /* Slightly increased line height for readability */
       -webkit-font-smoothing: antialiased; /* Smoother fonts */
       -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* Header Styling */
-    .site-header {
-      position: fixed; /* Stays on top when scrolling */
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 40px 20px; /* Increased padding for more vertical space */
-      background: transparent; /* Default transparent background */
-      box-shadow: none; /* No shadow by default */
-      z-index: 100;
-      display: flex;
-      justify-content: center; /* Centers the container within the header */
-      align-items: center; /* Vertically centers content */
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background and text color */
-    }
-
-    /* New class for scrolled header state */
-    .site-header.scrolled {
-      background-color: #ffffff; /* White background when scrolled */
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow when scrolled */
-    }
-
-    .site-header .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      width: 100%;
-      display: flex;
-      justify-content: space-between; /* Pushes logo to left, nav to right */
-      align-items: center; /* Vertically centers logo and nav within container */
-    }
-
-    .site-header .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #ffffff; /* Default white logo color */
-      user-select: none;
-      text-decoration: none;
-      transition: color 0.3s ease; /* Smooth transition for logo color */
-    }
-
-    /* Color change for logo when header is scrolled */
-    .site-header.scrolled .logo {
-      color: #1a1a1a; /* Dark logo color when scrolled */
-    }
-
-    /* Desktop Navigation */
-    .main-nav {
-      display: flex; /* Show by default on desktop */
-      justify-content: flex-end; /* Align nav links to the right */
-      flex-wrap: wrap; /* Allow links to wrap */
-    }
-
-    .main-nav a {
-      margin: 0 0 0 30px; /* Adjusted margin for spacing between links */
-      text-decoration: none;
-      color: #ffffff; /* Default white nav link color */
-      font-weight: 400;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: color 0.3s ease; /* Smooth transition for link color */
-      padding: 5px 0;
-    }
-
-    /* Color change for nav links when header is scrolled */
-    .site-header.scrolled .main-nav a {
-      color: #1a1a1a; /* Dark nav link color when scrolled */
-    }
-
-    .main-nav a:first-child {
-        margin-left: 0; /* No left margin for the first nav item */
-    }
-
-    .main-nav a:hover {
-      color: #cccccc; /* Default hover color */
-    }
-
-    /* Hover color change for nav links when header is scrolled */
-    .site-header.scrolled .main-nav a:hover {
-      color: #777; /* Darker hover color when scrolled */
-    }
-
-    /* Hamburger Menu Icon */
-    .hamburger-menu {
-      display: none; /* Hidden by default on desktop */
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      position: relative;
-      z-index: 101; /* Above mobile menu overlay */
-    }
-
-    .hamburger-menu .bar {
-      display: block;
-      width: 25px;
-      height: 3px;
-      margin: 5px auto;
-      background-color: #ffffff; /* Default white bars */
-      transition: all 0.3s ease-in-out; /* Smooth transition for bars */
-    }
-
-    /* Color change for hamburger bars when header is scrolled */
-    .site-header.scrolled .hamburger-menu .bar {
-      background-color: #1a1a1a; /* Dark bars when scrolled */
-    }
-
-    /* Mobile Navigation Overlay */
-    .mobile-nav-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(255, 255, 255, 0.95); /* Semi-transparent white overlay */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 99; /* Below hamburger, above content */
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    }
-
-    .mobile-nav-overlay.is-open {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .mobile-nav {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .mobile-nav a {
-      color: #1a1a1a; /* Dark text for mobile menu */
-      text-decoration: none;
-      font-size: 1.5rem; /* Larger font size for mobile links */
-      padding: 15px 0;
-      display: block;
-      transition: color 0.3s ease;
-    }
-
-    .mobile-nav a:hover {
-      color: #777;
     }
 
     /* Slider/Hero Section */
@@ -305,9 +157,9 @@
     }
 
     @media (min-width: 1024px) { /* Adjust breakpoint as needed for "big screens" */
-      .project-list {
-        grid-template-columns: repeat(4, 1fr); /* Force 3 columns */
-      }
+        .project-list {
+            grid-template-columns: repeat(4, 1fr); /* Force 3 columns */
+        }
     }
 
     /* Project Item Styling */
@@ -461,39 +313,163 @@
       margin: 0 auto; /* Center the body text */
     }
 
+    /* About and Contact Sections */
+    .about-section, .contact-section {
+      padding: 80px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 80px; /* Space before the next section/footer */
+    }
+
+    .about-section h2, .contact-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .about-section .profile-image {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Contact Section New Styles */
+    .contact-info-container {
+      display: flex;
+      flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+      justify-content: center; /* Center content horizontally */
+      gap: 40px; /* Space between contact blocks */
+      margin-top: 40px;
+    }
+
+    .contact-block {
+      text-align: left; /* Align text within each block */
+      flex: 1 1 calc(50% - 40px); /* Two columns on larger screens, with gap */
+      max-width: 400px; /* Limit width of each block */
+      padding: 20px;
+      box-sizing: border-box; /* Include padding in width */
+    }
+
+    .contact-block h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-block p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .contact-block a {
+      color: #555; /* Match text color for links */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-block a:hover {
+      color: #1a1a1a;
+    }
+
+    /* General inquiry email */
+    .contact-inquiry {
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    .contact-inquiry p {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #1a1a1a;
+    }
+    .contact-inquiry a {
+        color: #1a1a1a;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    .contact-inquiry a:hover {
+        color: #555;
+    }
+
+
+    /* Footer Styling */
+    .site-footer {
+        background-color: #1a1a1a; /* Dark background for footer */
+        color: #ffffff; /* White text */
+        padding: 60px 40px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        text-align: center; /* Center footer content */
+    }
+
+    .site-footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: center; /* Center items horizontally */
+        gap: 30px; /* Space between sections */
+    }
+
+    .footer-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
+
+    .footer-nav ul, .footer-social ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center links */
+        gap: 20px; /* Space between list items */
+    }
+
+    .footer-nav a, .footer-social a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-nav a:hover, .footer-social a:hover {
+        color: #cccccc;
+    }
+
+    .footer-info {
+        margin-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+        width: 100%; /* Ensure info section spans full width */
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      .site-header .main-nav {
-        display: none; /* Hide desktop nav on mobile */
-      }
-
-      .site-header .hamburger-menu {
-        display: block; /* Show hamburger on mobile */
-      }
-
-      .site-header .container {
-        justify-content: space-between; /* Ensure logo is left, hamburger is right */
-        width: 100%;
-      }
-
-      .site-header {
-        padding: 20px;
-        flex-direction: row; /* Keep logo and hamburger horizontal */
-      }
-
-      /* Hamburger menu animation for active state */
-      .hamburger-menu.is-active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-      }
-      .hamburger-menu.is-active .bar:nth-child(2) {
-        opacity: 0;
-      }
-      .hamburger-menu.is-active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-      }
-
       .slider {
-        height: 60vh;
+        height: 100vh;
       }
 
       /* Responsive for slider overlay text */
@@ -506,7 +482,7 @@
       }
 
       .slide-content {
-        bottom: 30px;
+        bottom: 50px;
         padding: 15px 20px;
       }
 
@@ -547,6 +523,34 @@
       .divider-content h2 {
         font-size: 2rem;
       }
+
+      .about-section, .contact-section {
+        padding: 60px 20px;
+        margin-bottom: 60px;
+      }
+
+      .about-section h2, .contact-section h2 {
+        font-size: 2rem;
+      }
+
+      .about-section p {
+        font-size: 1rem;
+      }
+
+      .contact-info-container {
+        flex-direction: column; /* Stack contact blocks on mobile */
+        gap: 30px;
+      }
+
+      .contact-block {
+        flex: 1 1 100%; /* Full width on mobile */
+        max-width: 100%;
+        text-align: center; /* Center text on mobile */
+      }
+
+      .contact-block h3 {
+        text-align: center;
+      }
     }
 
     @media (max-width: 480px) {
@@ -574,40 +578,29 @@
       }
 
       .slide-content {
-        bottom: 20px;
+        bottom: 60px;
         padding: 10px 15px;
       }
 
       .divider-content h2 {
         font-size: 1.5rem;
       }
+
+      .about-section, .contact-section {
+        padding: 40px 15px;
+        margin-bottom: 40px;
+      }
+
+      .about-section h2, .contact-section h2 {
+        font-size: 1.8rem;
+      }
     }
 
   </style>
+<script src="common_functions.js"></script>
 </head>
 <body>
-<header class="site-header">
-  <div class="container">
-    <a href="home.html" class="logo">AMONTON</a>
-    <button class="hamburger-menu" aria-label="Toggle navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
-    <nav class="main-nav"> <!-- Desktop Navigation -->
-      <a href="home.html" class="nav_link">Home</a>
-      <a href="about.html" class="nav_link">About</a>
-      <a href="contact.html" class="nav_link">Contact</a>
-    </nav>
-  </div>
-  <div class="mobile-nav-overlay"> <!-- Mobile Navigation Overlay -->
-    <nav class="mobile-nav">
-      <a href="home.html" class="nav_link">Home</a>
-      <a href="about.html" class="nav_link">About</a>
-      <a href="contact.html" class="nav_link">Contact</a>
-    </nav>
-  </div>
-</header>
+<div id="header-placeholder"></div>
 
 <div class="slider" id="main-slider">
   <div class="slide-track" id="slide-track">
@@ -643,8 +636,55 @@
   <h2 class="section-title">Architecture</h2> <main class="project-list" id="CategoryProjectList">
     </main>
   
+  <section class="divider-section" id="dividerSection1">
+    </section>
+
+    <!-- About Section -->
+    <section id="about-section" class="about-section">
+        <h2>About Us</h2>
+        <p>Welcome to AMONTON, a creative studio dedicated to crafting exceptional design experiences. We believe that good design is not just about aesthetics, but about creating functional, intuitive, and impactful solutions that resonate with people.</p>
+        <p>Our team is composed of passionate designers, architects, and visionaries who bring diverse perspectives and expertise to every project. From conceptualization to execution, we meticulously blend innovation with timeless principles to deliver spaces and products that stand out.</p>
+        <p>With years of experience in the industry, we have had the privilege of working on a wide range of projects, from residential and commercial architecture to bespoke furniture design and digital interfaces. Our commitment to excellence and client satisfaction drives us to push boundaries and exceed expectations.</p>
+        <p>At AMONTON, we are constantly exploring new materials, technologies, and methodologies to ensure our work remains at the forefront of design. We are passionate about transforming ideas into tangible realities and creating lasting value for our clients and the communities we serve.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-section" class="contact-section">
+        <h2>Contact</h2>
+        <p>We're always happy to hear from you. Find our office details and general inquiry contact below.</p>
+        <div class="contact-info-container" style="align-items: center;">
+            <div class="contact-block" style="text-align: center;">
+                <h3>Barcelona Office</h3>
+                <p>Amonton Design Studio</p>
+                <p>Barcelona Address </p>
+                <p>Spain</p>
+                <p>Phone: <a href="tel:+4512345678">+45 12 34 56 78</a></p>
+                <p>Email: <a href="mailto:cph@amonton.com">cph@amonton.com</a></p>
+            </div>
+            <!-- <div class="contact-block">
+                <h3>New York Office</h3>
+                <p>Amonton Design Studio</p>
+                <p>456 Broadway Ave</p>
+                <p>New York, NY 10012</p>
+                <p>USA</p>
+                <p>Phone: <a href="tel:+12125551234">+1 (212) 555-1234</a></p>
+                <p>Email: <a href="mailto:ny@amonton.com">ny@amonton.com</a></p>
+            </div> -->
+        </div>
+        <div class="contact-inquiry">
+            <p>For general inquiries, please reach out to:</p>
+            <p><a href="mailto:info@amonton.com">info@amonton.com</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
 
   <script>
+
+
+
    async function loadProjects(file, elem_id) {
     try {
         // 1. Fetch the index.json which now primarily provides folder and basic info
@@ -749,6 +789,9 @@
         if (dividers.length > i) {
           // For simplicity, let's just pick the first divider for now
           const divider = dividers[i]; 
+          // Clear previous content if any, to avoid duplication on re-render
+          dividerSection.innerHTML = '';
+
 
           const img = document.createElement('img');
           img.src = `slider/${divider.image}`;
@@ -765,6 +808,7 @@
 
           dividerSection.appendChild(img);
           dividerSection.appendChild(overlay);
+          content.classList.add('divider-content'); // Add this line
           dividerSection.appendChild(content);
 
         } else {
@@ -773,7 +817,7 @@
 
       } catch (error) {
         console.error('Failed to load dividers:', error);
-        const dividerSection = document.getElementById('dividerSection');
+        const dividerSection = document.getElementById(divider_id);
         dividerSection.style.display = 'none'; // Hide section if there's an error
       }
     }
@@ -910,57 +954,15 @@
 
     // Call loadSlider when the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', () => {
+        loadHeader();
         loadSlider(); // Load the main slider first
         loadProjects('projects/index.json', 'projectList'); // Then load projects
-        loadDivider(0, 'dividerSection'); // Load the divider
+        loadDivider(0, 'dividerSection'); // Load the first divider
         loadProjects('projects/arch.json', 'CategoryProjectList'); // Load category projects
+        loadDivider(1, 'dividerSection1'); // Load the second divider
+        loadFooter();
     });
 
-
-    // --- Hamburger Menu Logic ---
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav .nav_link');
-
-    hamburgerMenu.addEventListener('click', () => {
-      hamburgerMenu.classList.toggle('is-active');
-      mobileNavOverlay.classList.toggle('is-open');
-      document.body.style.overflow = mobileNavOverlay.classList.contains('is-open') ? 'hidden' : '';
-    });
-
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburgerMenu.classList.remove('is-active');
-        mobileNavOverlay.classList.remove('is-open');
-        document.body.style.overflow = '';
-      });
-    });
-
-    mobileNavOverlay.addEventListener('click', (event) => {
-        if (event.target === mobileNavOverlay) {
-            hamburgerMenu.classList.remove('is-active');
-            mobileNavOverlay.classList.remove('is-open');
-            document.body.style.overflow = '';
-        }
-    });
-
-    // --- Header Scroll Logic ---
-    const siteHeader = document.querySelector('.site-header');
-    const sliderElement = document.querySelector('.slider');
-
-    function checkHeaderBackground() {
-        const sliderBottom = sliderElement.getBoundingClientRect().bottom;
-
-        // Change header background if scrolled past the slider's bottom edge
-        if (window.scrollY > sliderBottom - siteHeader.offsetHeight) {
-            siteHeader.classList.add('scrolled');
-        } else {
-            siteHeader.classList.remove('scrolled');
-        }
-    }
-
-    window.addEventListener('scroll', checkHeaderBackground);
-    window.addEventListener('load', checkHeaderBackground);
 
   </script>
 </body>
