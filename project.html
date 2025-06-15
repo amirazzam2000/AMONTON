@@ -244,7 +244,7 @@
     }
 
   </style>
-  <script src="../common_functions.js"></script>
+  <script src="common_functions.js"></script>
 </head>
 <body>
 
@@ -284,7 +284,7 @@
     // }
 
     try {
-      const response = await fetch(`${path}/metadata.json`); // Fetch metadata.json from the same directory
+      const response = await fetch(`projects/${path}/metadata.json`); // Fetch metadata.json from the same directory
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -303,7 +303,7 @@
         const heroImage = document.createElement('img');
         heroImage.className = 'project-hero-image';
         // Ensure image source is correctly resolved based on where your images are
-        heroImage.src = `${path}/${headerImageContent.src}`;
+        heroImage.src = `projects/${path}/${headerImageContent.src}`;
         heroImage.alt = headerImageContent.alt || project.title;
         heroImage.onerror = function() {
             this.onerror=null; // Prevent infinite loop if fallback also fails
@@ -413,7 +413,7 @@
 
         if (item.type === 'img') {
           const imgElement = document.createElement('img');
-          imgElement.src = `${path}/${item.src}`;
+          imgElement.src = `projects/${path}/${item.src}`;
           imgElement.alt = item.alt || 'Project Image';
           imgElement.onerror = function() {
             this.onerror=null;
@@ -423,7 +423,7 @@
         } else if (item.type === 'txt') {
           const textElement = document.createElement('p');
           // Assuming 'src' holds the text content for 'txt' type
-          textElement.innerHTML = `${path}/${item.src}` ? item.src.replace(/\n/g, '<br><br>') : 'No text content provided.';
+          textElement.innerHTML = `projects/${path}/${item.src}` ? item.src.replace(/\n/g, '<br><br>') : 'No text content provided.';
           textElement.style.fontSize = '1.1rem';
           textElement.style.lineHeight = '1.8';
           textElement.style.color = '#333';

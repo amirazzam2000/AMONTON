@@ -136,7 +136,7 @@ function initializeHeaderLogic() {
 // Function to load the footer
 async function loadFooter() {
     try {
-        const response = await fetch('/footer.html'); // Fetch the separate footer file
+        const response = await fetch('footer.html'); // Fetch the separate footer file
         const footerHtml = await response.text();
         document.getElementById('footer-placeholder').innerHTML = footerHtml;
     } catch (error) {
@@ -151,7 +151,7 @@ async function loadFooter() {
 // Function to load the header (assuming it's called somewhere, e.g., in home.html)
 async function loadHeader() {
     try {
-        const response = await fetch('/header.html'); 
+        const response = await fetch('header.html'); 
         const headerHtml = await response.text();
         document.getElementById('header-placeholder').innerHTML = headerHtml;
         
