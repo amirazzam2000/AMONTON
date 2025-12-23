@@ -1,26 +1,38 @@
 [
   {
-    "folder": "project1",
+    "folder": "Carmina",
+    "size": 1
+  },
+  {
+    "folder": "Casa_Calpes",
+    "size": 1
+  },
+  {
+    "folder": "Cowo",
+    "size": 1
+  },
+  {
+    "folder": "Font_Cabrera",
+    "size": 1
+  },
+  {
+    "folder": "Muntaner",
+    "size": 1
+  },
+  {
+    "folder": "Pedritxes",
     "size": 2
   },
   {
-    "folder": "project1",
-    "size": 1
+    "folder": "Senda_Studio",
+    "size": 2
   },
   {
-    "folder": "project1",
-    "size": 1
+    "folder": "Surf_Mar",
+    "size": 2
   },
   {
-    "folder": "project4",
-    "size": 1
-  },
-  {
-    "folder": "project2",
-    "size": 1
-  },
-  {
-    "folder": "project3",
+    "folder": "Zínonos",
     "size": 2
   }
 ]
