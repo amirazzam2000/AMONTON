@@ -9,7 +9,11 @@
   },
   {
     "folder": "Cowo",
-    "size": 1
+    "size": 2
+  },
+  {
+    "folder": "Estepona",
+    "size": 2
   },
   {
     "folder": "Font_Cabrera",
@@ -21,18 +25,18 @@
   },
   {
     "folder": "Pedritxes",
-    "size": 2
+    "size": 1
   },
   {
     "folder": "Senda_Studio",
-    "size": 2
+    "size": 1
   },
   {
     "folder": "Surf_Mar",
-    "size": 2
+    "size": 1
   },
   {
     "folder": "Zínonos",
-    "size": 2
+    "size": 1
   }
 ]
