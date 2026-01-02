@@ -1,0 +1,15 @@
+{
+  "title": "Font Cabrera",
+  "category": ["ARCHITECTURE", "RESIDENTIAL"],
+  "year": "2025",
+  "thumbnail_photo": "photos/Image2.png",
+  "thumbnail_desc": "",
+  "description": "",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/Image11.png", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/Image2.png", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/Image5_000.png", "alt": ""}
+  ],
+  "location": "Font Cabrera, Barcelona, Spain",
+  "photography": "Amonton"
+}

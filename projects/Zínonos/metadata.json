@@ -1,0 +1,15 @@
+{
+  "title": "Zinonos",
+  "category": ["ARCHITECTURE", "RESIDENTIAL"],
+  "year": "2021",
+  "thumbnail_photo": "photos/Image4.png",
+  "thumbnail_desc": "",
+  "description": "",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/Image4.png", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/Image6.png", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/Image7.png", "alt": ""}
+  ],
+  "location": "Barcelona",
+  "photography": "Jonas Bjerre-Poulsen & Karl Tranberg Knudse"
+}

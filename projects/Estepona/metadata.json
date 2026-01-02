@@ -1,0 +1,16 @@
+{
+  "title": "Estepona",
+  "category": ["ARCHITECTURE", "RESIDENTIAL"],
+  "year": "2021",
+  "thumbnail_photo": "photos/DJI_0097.jpg",
+  "thumbnail_desc": "",
+  "description": "",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/DJI_0097.jpg", "alt": ""},
+    {"type": "img", "size": 4, "src": "photos/IMG_5087.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/IMG_5784.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/IMG_5788.jpg", "alt": ""}
+  ],
+  "location": "Estepona, Marbella, Spain",
+  "photography": "Amonton"
+}

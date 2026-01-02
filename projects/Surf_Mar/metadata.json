@@ -1,0 +1,14 @@
+{
+  "title": "Surf Mar",
+  "category": ["ARCHITECTURE", "HOSPITALITY"],
+  "year": "2021",
+  "thumbnail_photo": "photos/Image13.png",
+  "thumbnail_desc": "",
+  "description": "",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/Image13.png", "alt": ""},
+    {"type": "img", "size": 4, "src": "photos/Image13.png", "alt": ""}
+  ],
+  "location": "Barcelona",
+  "photography": "Jonas Bjerre-Poulsen & Karl Tranberg Knudse"
+}

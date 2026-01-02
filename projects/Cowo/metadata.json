@@ -1,0 +1,15 @@
+{
+  "title": "Cowo",
+  "category": ["ARCHITECTURE", "RETAIL"],
+  "year": "2025",
+  "thumbnail_photo": "photos/Image11.png",
+  "thumbnail_desc": "",
+  "description": "",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/Image11.png", "alt": "Kolon House Exterior"},
+    {"type": "img", "size": 4, "src": "photos/Image12.png", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/Image6.png", "alt": ""}
+   ],
+  "location": "Barcelona",
+  "photography": "Amonton"
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Pedritxes",
+  "category": ["ARCHITECTURE", "RESIDENTIAL"],
+  "year": "2021",
+  "thumbnail_photo": "photos/_Image_02.jpg",
+  "thumbnail_desc": "",
+  "description": "",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/_Image_02.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/_Image_02.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/_Image_03.jpg", "alt": ""}
+  ],
+  "location": "Barcelona",
+  "photography": "Anas Azzam",
+  "visualization": "Anas Azzam"
+}

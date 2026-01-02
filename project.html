@@ -457,7 +457,24 @@
             this.onerror=null;
             this.src='https://placehold.co/600x400/eeeeee/333333?text=Image+Missing';
           };
+          
+          const width = gridItem.getBoundingClientRect().width;
+          imgElement.style.height = "auto";
+          if (item.size == 1){
+            imgElement.style.aspectRatio = 4 / 5;
+          }
+          else if (item.size == 2){
+            imgElement.style.aspectRatio =  1 / 1;
+          }
+          else if (item.size == 3){
+            imgElement.style.aspectRatio = 3 / 2;
+          }
+          else if (item.size == 4){
+            imgElement.style.aspectRatio = 16 / 9 ;
+          }
+
           gridItem.appendChild(imgElement);
+
         } else if (item.type === 'video') {
           const videoElement = document.createElement('video');
           videoElement.src = `projects/${path}/${item.src}`;

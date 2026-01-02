@@ -1,0 +1,27 @@
+{
+  "title": "Muntaner",
+  "category": ["ARCHITECTURE", "RESIDENTIAL"],
+  "year": "2021",
+  "thumbnail_photo": "photos/2507300462z.jpg",
+  "thumbnail_desc": "",
+  "description": "",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/2507300330z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300042z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300137z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300157z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300165z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300175z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300330z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300462z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300495z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300655z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300762z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300875z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300942z.jpg", "alt": ""},
+    {"type": "img", "size": 1, "src": "photos/2507300981z.jpg", "alt": ""}
+  ],
+  "location": "Barcelona",
+  "photography": "Anas Azzam",
+  "visualization": "Anas Azzam"
+}
