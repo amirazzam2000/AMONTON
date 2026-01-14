@@ -7,19 +7,9 @@
   "description": "The name Flame on the Moon comes from two simple ideas that define the apartment. The moon refers to the microcement, which sets the tone of the space with its clean, continuous surfaces. It creates a calm, neutral backdrop that contrasts beautifully with the darker wooden elements of the kitchen and furniture, making the apartment feel cohesive and almost sculpted as a whole. The flame comes from a light-hearted story behind the project. While fixing some electrical issues, our partner Cristian had a small accident and nearly caught fire. Fortunately, nothing serious happened—just a few burnt hairs and a good story—giving the apartment its playful and memorable name.",
   "content": [
     {"type": "header-img", "size": 1, "src": "photos/2507300330z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300042z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300137z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300157z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300165z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300175z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300330z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300462z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300495z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300655z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300762z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300875z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300942z.jpg", "alt": ""},
-    {"type": "img", "size": 1, "src": "photos/2507300981z.jpg", "alt": ""}
+    {"type": "img", "size": 4, "src": "photos/2507300042z.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/2507300462z.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/2507300655z.jpg", "alt": ""}
   ],
   "location": "Barcelona",
   "photography": "Aitor Estévez Olaizola"
