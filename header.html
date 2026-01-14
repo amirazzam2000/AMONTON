@@ -33,6 +33,13 @@
   align-items: center; /* Vertically centers logo and nav within container */
 }
 
+.site-header .logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
 .site-header .logo {
   font-weight: 700;
   font-size: 1.5rem;
@@ -45,6 +52,18 @@
 /* Color change for logo when header is scrolled */
 .site-header.scrolled .logo {
   color: #1a1a1a; /* Dark logo color when scrolled */
+}
+
+.site-header .logo-subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.site-header.scrolled .logo-subtitle {
+  color: #1a1a1a;
 }
 
 /* Desktop Navigation */
@@ -221,31 +240,34 @@
 
 <header class="site-header">
   <div class="container">
-    <a href="index.html#main-slider" class="logo">AMONTON</a>
+    <div class="logo-wrapper">
+      <a href="index.html#main-slider" class="logo">AMONTON</a>
+      <span class="logo-subtitle">Architecture & Construction</span>
+    </div>
     <button class="hamburger-menu" aria-label="Toggle navigation">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
     </button>
     <nav class="main-nav"> <!-- Desktop Navigation -->
-      <a href="index.html#main-slider"  class="nav_link">Home</a>
+      <a href="index.html#main-slider"  class="nav_link">Work</a>
       <a href="index.html#about-section" class="nav_link">About</a>
       <a href="index.html#contact-section"  class="nav_link">Contact</a>
       <!-- Login Icon -->
-    <a href="https://amonton.softr.app/login" class="login-btn" aria-label="Login">
+    <!-- <a href="https://amonton.softr.app/login" class="login-btn" aria-label="Login">
       Login
-    </a>
+    </a> -->
 
     </nav>
   </div>
   <div class="mobile-nav-overlay"> <!-- Mobile Navigation Overlay -->
     <nav class="mobile-nav">
-      <a href="index.html#main-slider"  class="nav_link">Home</a>
+      <a href="index.html#main-slider"  class="nav_link">Work</a>
       <a href="index.html#about-section"  class="nav_link">About</a>
       <a href="index.html#contact-section"  class="nav_link">Contact</a>
-      <a href="https://amonton.softr.app/login" class="login-btn" aria-label="Login">
+      <!-- <a href="https://amonton.softr.app/login" class="login-btn" aria-label="Login">
         Login
-      </a>
+      </a> -->
     </nav>
   </div>
 </header>
