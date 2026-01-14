@@ -1,16 +1,15 @@
 {
   "title": "Pedritxes",
-  "category": ["ARCHITECTURE", "RESIDENTIAL"],
-  "year": "2021",
+  "category": ["RESIDENTIAL"],
+  "year": "2024",
   "thumbnail_photo": "photos/_Image_02.jpg",
-  "thumbnail_desc": "",
-  "description": "",
+  "thumbnail_desc": "Study for the a full renovation of a villa in Matadepera.",
+  "description": "Pedritxes is a Catalan term that refers to the small stone or concrete upstands, or low plinths, found at the base of a wall, façade, or structure. Coincidentally, it is also the name of the street. When viewed from the outside, the villa reads almost like a single large stone emerging from the ground, which made it feel natural—and amusing—to name the project after the street itself.",
   "content": [
     {"type": "header-img", "size": 1, "src": "photos/_Image_02.jpg", "alt": ""},
     {"type": "img", "size": 2, "src": "photos/_Image_02.jpg", "alt": ""},
     {"type": "img", "size": 2, "src": "photos/_Image_03.jpg", "alt": ""}
   ],
-  "location": "Barcelona",
-  "photography": "Anas Azzam",
-  "visualization": "Anas Azzam"
+  "location": "Carrer les Pedritxes, Matadepera, Barcelona",
+  "visualization": "Amonton"
 }

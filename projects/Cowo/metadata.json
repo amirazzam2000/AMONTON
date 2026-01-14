@@ -1,15 +1,15 @@
 {
   "title": "Cowo",
-  "category": ["ARCHITECTURE", "RETAIL"],
+  "category": ["RETAIL"],
   "year": "2025",
   "thumbnail_photo": "photos/Image11.png",
-  "thumbnail_desc": "",
-  "description": "",
+  "thumbnail_desc": "Study for the possible transformation of a two-storey bank into a modern coworking space.",
+  "description": "In elegant metallic spiral staircase, finished in a bold granite-toned colour, captures attention and becomes the focal point of the space. The office areas are organised efficiently to maximise usable space, allowing the common areas to open up around the kitchen and extend visually towards the terrace at the far end. The combination of microcement flooring and exposed, painted ceiling installations contrasts with the refined metallic structure and wooden furniture, creating a balance between an industrial character and a calm, sophisticated atmosphere. Bright colours are introduced in the common areas to add energy and vibrancy to the overall space.",
   "content": [
     {"type": "header-img", "size": 1, "src": "photos/Image11.png", "alt": "Kolon House Exterior"},
     {"type": "img", "size": 4, "src": "photos/Image12.png", "alt": ""},
     {"type": "img", "size": 2, "src": "photos/Image6.png", "alt": ""}
    ],
-  "location": "Barcelona",
-  "photography": "Amonton"
+  "location": "Carrer de Mallorca, 162, Barcelona",
+  "visualization": "Amonton"
 }

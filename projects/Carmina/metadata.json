@@ -1,18 +1,15 @@
 {
   "title": "Carmina",
-  "category": ["ARCHITECTURE", "RESIDENTIAL"],
-  "year": "2021",
+  "category": ["RETAIL"],
+  "year": "2025",
   "thumbnail_photo": "photos/image2_b.png",
   "thumbnail_desc": "Inspired by the timeless allure of Denmark's coasts, Shore Collection celebrates the serene yet dynamic essence of the shoreline and bustling harbors that define the Danish landscape.",
-  "description": "In a private family home dating back to 1918, overlooking the beautiful city of Gentofte north of bustling Copenhagen, the entire first floor has been fully renovated and completed with a new interior layout. This project focused on creating a harmonious blend of classic charm and modern functionality, optimizing natural light and flow throughout the living spaces. The design emphasizes natural materials and a minimalist aesthetic to create a serene and inviting atmosphere.",
+  "description": "Located on Carrer de l’Argenteria, in the historic heart of Barcelona, the restaurant inhabits a street where elegance and memory coexist, shaped by the textures of the old neighbourhood. Part of an Italian chain, its identity is revealed upon entry through a generous patio that merges Spanish and Italian traditions of shaping interior space. The project’s main objective was to increase seating capacity on the upper floor without sacrificing Italian charm. This was achieved by drawing the seating to the perimeter, with custom-designed sofas whose chromatic bases and mirrored back panels amplify light and spatial depth. A black-painted ceiling and wall lamps resting above the mirrors create an intimate, almost theatrical atmosphere, ready to host dark green and red Italian fabrics that infuse the space with a refined and unmistakably Italian soul.",
   "content": [
     {"type": "header-img", "size": 1, "src": "photos/image2_b.png", "alt": "Kolon House Exterior"},
-    {"type": "img", "size": 1, "src": "photos/photos.jpg", "alt": "Kolon House Living Room"},
-    {"type": "img", "size": 1, "src": "photos/Anabell.png", "alt": "Kolon House Living Room"},
-    {"type": "txt", "size": 1, "src": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin molestie magna. Nullam quis neque in dui pellentesque volutpat. Mauris sapien libero, interdum sit amet pulvinar ut, auctor a nibh. Aliquam non elementum nisi. Phasellus dapibus aliquam urna in ultricies. Duis vitae pellentesque tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin efficitur placerat ex porttitor fringilla."},
-    {"type": "txt", "size": 1, "src": "Phasellus at luctus augue. Mauris ut aliquet enim. Mauris vestibulum eleifend orci, eu mollis augue tempor quis. Cras gravida orci non augue volutpat, nec viverra nunc lacinia. Sed maximus faucibus ante tempor pulvinar. Aenean eget viverra tellus. Nam imperdiet neque eu metus gravida pulvinar. Sed non urna velit."},
-    {"type": "txt", "size": 2, "src": "Nam convallis maximus tristique. Pellentesque tincidunt lacinia neque. Mauris aliquet nisl vel sollicitudin mollis. Morbi ullamcorper tellus eu tortor sagittis, commodo dictum felis auctor. Fusce odio odio, euismod quis sodales vitae, faucibus sed lectus. Pellentesque sed enim ut urna congue mattis vel vehicula nibh. Maecenas lacinia facilisis risus, sed convallis dui ultrices sit amet. Maecenas eu est semper, sagittis nunc in, venenatis velit. Sed a varius dolor, non tempus massa. Aliquam eros dui, gravida interdum lectus et, accumsan viverra erat. Aliquam mi ligula, condimentum et congue eu, maximus at massa."}
+    {"type": "img", "size": 2, "src": "photos/image2_b.png", "alt": "Kolon House Living Room"},
+    {"type": "img", "size": 2, "src": "photos/image3_b.png", "alt": "Kolon House Living Room"}
   ],
-  "location": "Barcelona",
-  "photography": "Jonas Bjerre-Poulsen & Karl Tranberg Knudse"
+  "location": "Carrer de l'Argenteria, 37 Barcelona",
+  "visualization": "Amonton"
 }

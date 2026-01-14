@@ -1,15 +1,15 @@
 {
   "title": "Font Cabrera",
-  "category": ["ARCHITECTURE", "RESIDENTIAL"],
+  "category": ["RESIDENTIAL"],
   "year": "2025",
   "thumbnail_photo": "photos/Image2.png",
-  "thumbnail_desc": "",
-  "description": "",
+  "thumbnail_desc": "Images for a New Villa in Font Cabrera.",
+  "description": "The images depict the villa as a solid rock emerging from the ground. The materials and colour palette draw from the earthy tones of the surrounding mountain landscape, while refined metallic frames and panoramic windows add an elegant expression, opening the interior to breathtaking views.",
   "content": [
     {"type": "header-img", "size": 1, "src": "photos/Image11.png", "alt": ""},
     {"type": "img", "size": 2, "src": "photos/Image2.png", "alt": ""},
     {"type": "img", "size": 2, "src": "photos/Image5_000.png", "alt": ""}
   ],
   "location": "Font Cabrera, Barcelona, Spain",
-  "photography": "Amonton"
+  "visualization": "Amonton"
 }

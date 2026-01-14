@@ -1,14 +1,14 @@
 {
   "title": "Senda Studio",
-  "category": ["ARCHITECTURE", "RESIDENTIAL"],
-  "year": "2021",
+  "category": ["RETAIL"],
+  "year": "2025",
   "thumbnail_photo": "photos/Image4.jpg",
-  "thumbnail_desc": "",
-  "description": "",
+  "thumbnail_desc": "New Yoga Studio in the Heart of Barcelona.",
+  "description": "The first thing you notice when you step inside is how clean and beautifully sculpted the space feels—it almost makes you want to take off your shoes. Fortunately, there is a small vitrine at the entrance where you can leave your shoes. Many of the walls retain the textures of the original brick, as if the microcement had been poured into the space and then frozen, capturing the history of the place within its surfaces.",
   "content": [
     {"type": "header-img", "size": 1, "src": "photos/Image4.jpg", "alt": ""},
     {"type": "img", "size": 4, "src": "photos/Image6.jpg", "alt": ""}
   ],
   "location": "Barcelona",
-  "photography": "Jonas Bjerre-Poulsen & Karl Tranberg Knudse"
+  "visualization": "Amonton"
 }

@@ -1,10 +1,10 @@
 {
-  "title": "Estepona",
-  "category": ["ARCHITECTURE", "RESIDENTIAL"],
-  "year": "2021",
+  "title": "AP.02. Estepona",
+  "category": ["RESIDENTIAL"],
+  "year": "2025",
   "thumbnail_photo": "photos/DJI_0097.jpg",
-  "thumbnail_desc": "",
-  "description": "",
+  "thumbnail_desc": "Interior Design and Renovation of a Modern Apartment in Estepona.",
+  "description": "Sapphire is a Latin Word that refers to the blue gemstone known for its clarity, brilliance, and durability. In collaboration with the Argentinean studio Onablau, this project is all about creating identity—elegance and comfort that let you fully enjoy the landscape. Every detail has been thoughtfully designed, from the carpentry to the placement of the exterior seating, so you can sit back quietly and savor your Aperol Spritz while watching the sunset.",
   "content": [
     {"type": "header-img", "size": 1, "src": "photos/DJI_0097.jpg", "alt": ""},
     {"type": "img", "size": 4, "src": "photos/IMG_5087.jpg", "alt": ""},
@@ -12,5 +12,5 @@
     {"type": "img", "size": 2, "src": "photos/IMG_5788.jpg", "alt": ""}
   ],
   "location": "Estepona, Marbella, Spain",
-  "photography": "Amonton"
+  "photography": "Daniel Martinez"
 }

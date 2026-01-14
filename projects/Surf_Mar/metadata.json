@@ -1,14 +1,14 @@
 {
   "title": "Surf Mar",
-  "category": ["ARCHITECTURE", "HOSPITALITY"],
-  "year": "2021",
+  "category": ["HOTEL"],
+  "year": "2025",
   "thumbnail_photo": "photos/Image13.png",
-  "thumbnail_desc": "",
-  "description": "",
+  "thumbnail_desc": "Study for the Renovation and Expansion of the Surf Mar Hotel in Costa Brava.",
+  "description": "In colaboration wit Col.9067 The building embodies the company’s image, making it distinctive among other offerings. Designed to inspire guests to enjoy its facilities, it features a landscaped roof entrance, a 15-meter-high lobby, staggered terraces, a ceramic façade, and carefully planned parking and sports areas. The ceramic skin gives warmth to the guestroom façade, separates quiet leisure areas from sports zones, creates a striking visual impact, and contributes to the building’s energy efficiency.",
   "content": [
     {"type": "header-img", "size": 1, "src": "photos/Image13.png", "alt": ""},
     {"type": "img", "size": 4, "src": "photos/Image13.png", "alt": ""}
   ],
-  "location": "Barcelona",
-  "photography": "Jonas Bjerre-Poulsen & Karl Tranberg Knudse"
+  "location": "Costa brava, Barcelona",
+  "visualization": "Amonton"
 }

@@ -1,10 +1,10 @@
 {
-  "title": "Muntaner",
-  "category": ["ARCHITECTURE", "RESIDENTIAL"],
-  "year": "2021",
+  "title": "AP.01. A Flame on the Moon",
+  "category": ["RESIDENTIAL"],
+  "year": "2025",
   "thumbnail_photo": "photos/2507300462z.jpg",
-  "thumbnail_desc": "",
-  "description": "",
+  "thumbnail_desc": "A fully renovated apartment in Barcelona for a private client.",
+  "description": "The name Flame on the Moon comes from two simple ideas that define the apartment. The moon refers to the microcement, which sets the tone of the space with its clean, continuous surfaces. It creates a calm, neutral backdrop that contrasts beautifully with the darker wooden elements of the kitchen and furniture, making the apartment feel cohesive and almost sculpted as a whole. The flame comes from a light-hearted story behind the project. While fixing some electrical issues, our partner Cristian had a small accident and nearly caught fire. Fortunately, nothing serious happened—just a few burnt hairs and a good story—giving the apartment its playful and memorable name.",
   "content": [
     {"type": "header-img", "size": 1, "src": "photos/2507300330z.jpg", "alt": ""},
     {"type": "img", "size": 1, "src": "photos/2507300042z.jpg", "alt": ""},
@@ -22,6 +22,5 @@
     {"type": "img", "size": 1, "src": "photos/2507300981z.jpg", "alt": ""}
   ],
   "location": "Barcelona",
-  "photography": "Anas Azzam",
-  "visualization": "Anas Azzam"
+  "photography": "Aitor Estévez Olaizola"
 }

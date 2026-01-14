@@ -1,15 +1,15 @@
 {
   "title": "Zinonos",
-  "category": ["ARCHITECTURE", "RESIDENTIAL"],
-  "year": "2021",
+  "category": ["RESIDENTIAL"],
+  "year": "2026",
   "thumbnail_photo": "photos/Image4.png",
-  "thumbnail_desc": "",
-  "description": "",
+  "thumbnail_desc": "Transforming a Former Office Building into 8 Apartments.",
+  "description": "Zinonos is a Greek name (Ζηνών in modern Greek: Zinon), derived from the ancient Greek name Zeno (Ζήνων), meaning “Gift of Zeus.” This project is truly a gift. Transforming a large office building into eight naturally lit, delightful studios for young people helps address the residential shortage in Athens, while also creating eight distinct apartments, each with its own unique character.",
   "content": [
     {"type": "header-img", "size": 1, "src": "photos/Image4.png", "alt": ""},
     {"type": "img", "size": 2, "src": "photos/Image6.png", "alt": ""},
     {"type": "img", "size": 2, "src": "photos/Image7.png", "alt": ""}
   ],
-  "location": "Barcelona",
-  "photography": "Jonas Bjerre-Poulsen & Karl Tranberg Knudse"
+  "location": "Zinonos 37, Athina, Greece",
+  "visualization": "Amonton"
 }
