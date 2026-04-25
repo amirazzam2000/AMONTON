@@ -164,6 +164,12 @@
         }
     }
 
+    @media (max-width: 768px) { /* Adjust breakpoint as needed for "big screens" */
+        .project-list {
+            grid-template-columns: repeat(2, 1fr); /* Force 3 columns */
+        }
+    }
+
     /* Project Item Styling */
     .project {
       background: none;
@@ -471,6 +477,7 @@
         width: 100%; /* Ensure info section spans full width */
     }
 
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .slider {
@@ -569,6 +576,8 @@
       .project-list {
         padding: 30px 15px;
         gap: 30px;
+        grid-template-columns: repeat(1, 1fr); /* Force 3 columns */
+        
       }
       .section-title {
         font-size: 1.8rem;
