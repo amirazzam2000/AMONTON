@@ -1,5 +1,25 @@
 [
   {
+    "folder": "Avenir",
+    "size": 1
+  },
+  {
+    "folder": "Ago Pilates",
+    "size": 1
+  },
+  {
+    "folder": "Muntaner",
+    "size": 1
+  },
+  {
+    "folder": "Estepona",
+    "size": 1
+  },
+  {
+    "folder": "Senda_Studio",
+    "size": 1
+  },
+  {
     "folder": "Casa_Calpes",
     "size": 1
   },
@@ -8,23 +28,11 @@
     "size": 1
   },
   {
-    "folder": "Estepona",
-    "size": 2
-  },
-  {
     "folder": "Font_Cabrera",
-    "size": 2
-  },
-  {
-    "folder": "Muntaner",
     "size": 1
   },
   {
     "folder": "Pedritxes",
-    "size": 1
-  },
-  {
-    "folder": "Senda_Studio",
     "size": 1
   },
   {
@@ -33,6 +41,7 @@
   },
   {
     "folder": "Zínonos",
-    "size": 2
+    "size": 1
   }
+
 ]

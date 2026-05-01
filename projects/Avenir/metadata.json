@@ -1,0 +1,16 @@
+{
+  "title": "AP.03. Mama Africa",
+  "category": ["RESIDENTIAL"],
+  "year": "2026",
+  "thumbnail_photo": "photos/2603250305z.jpg",
+  "thumbnail_desc": "A fully renovated apartment in Barcelona.",
+  "description": "It’s the combination of warm wood, soft beige fabrics, and sand-colored walls that creates a quiet atmosphere, inviting a relaxed and calm way of living in this newly renovated apartment in Barcelona..",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/2603250230z.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/2603250175z.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/2603250714z.jpg", "alt": ""},
+    {"type": "img", "size": 4, "src": "photos/2603250305z.jpg", "alt": ""}
+  ],
+  "location": "Private",
+  "Photography": "Aitor Estévez Olaizola"
+}
