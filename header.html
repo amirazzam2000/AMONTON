@@ -66,6 +66,36 @@
   color: #1a1a1a;
 }
 
+.site-header .logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1); /* White on dark hero */
+  transition: filter 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+  .site-header .logo-img {
+    height: 60px;
+  }
+}
+
+.site-header.scrolled .logo-img {
+  filter: brightness(0); /* Dark on white background */
+}
+
+.site-header .logo-svg {
+  height: 40px;
+  width: auto;
+  display: block;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.site-header.scrolled .logo-svg {
+  color: #1a1a1a;
+}
+
 /* Desktop Navigation */
 .main-nav {
   display: flex; /* Show by default on desktop */
@@ -235,14 +265,20 @@
 
     </style>
 
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet"> -->
 </head>
 
 
 <header class="site-header">
   <div class="container">
     <div class="logo-wrapper">
-      <a href="index.html#main-slider" class="logo">AMONTON</a>
-      <span class="logo-subtitle">Architecture & Construction</span>
+      <a href="index.html#main-slider"><img src="Architecture and construction.svg" class="logo-img" alt="AMONTON Architecture & Construction"></a>
+      <!-- <a href="index.html#main-slider">
+        <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 90" fill="currentColor" aria-label="AMONTON Architecture & Construction">
+          <text x="200" y="63" font-family="'Montserrat', sans-serif" font-weight="900" font-size="68" text-anchor="middle">AMONTON</text>
+          <text x="200" y="82" font-family="'Cormorant Garamond', serif" font-weight="400" font-size="16" text-anchor="middle" letter-spacing="2">Architecture &amp; Construction</text>
+        </svg>
+      </a> -->
     </div>
     <button class="hamburger-menu" aria-label="Toggle navigation">
         <span class="bar"></span>
