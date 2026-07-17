@@ -1,0 +1,42 @@
+{
+  "gap": 30,
+  "height": "80vh",
+  "rows": [
+    {
+      "items": [
+        {
+          "photo": "g1.png",
+          "title": "Muntaner"
+        },
+        {
+          "photo": "g2.jpg",
+          "title": "Ago Pilates"
+        },
+        {
+          "photo": "g3.jpg",
+          "title": "Avenir"
+        }
+      ]
+    },
+    {
+      "items": [
+        {
+          "photo": "g4.jpg",
+          "title": "Estepona"
+        },
+        {
+          "photo": "g5.jpg",
+          "title": "Senda Studio"
+        }
+      ]
+    },
+    {
+      "items": [
+        {
+          "photo": "g6.png",
+          "title": "Casa Calpes"
+        }
+      ]
+    }
+  ]
+}

@@ -35,8 +35,11 @@ function initializeHeaderLogic() {
 
     const baseURL = getFullBaseURL();
     document.querySelectorAll('.nav_link').forEach(link => {
-        const hash = link.getAttribute('href').split('#')[1];
-        link.setAttribute('href', `${baseURL}index.html#${hash}`);
+        const [path, hash] = link.getAttribute('href').split('#');
+        // Keep the target page if the link specifies one (e.g. work.html);
+        // otherwise default to index.html. Preserve any #hash for scrolling.
+        const page = (path && path.trim() !== '') ? path : 'index.html';
+        link.setAttribute('href', `${baseURL}${page}${hash ? '#' + hash : ''}`);
     });
     const logo = document.querySelector('.logo');
     if (logo) {

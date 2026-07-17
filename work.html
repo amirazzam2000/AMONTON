@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AMONTON — Architecture &amp; Construction</title>
+  <title>Work — AMONTON</title>
 
   <!-- Favicon (tab icon) -->
   <link rel="icon" type="image/svg+xml" href="Architecture%20and%20construction.svg" />
@@ -11,19 +11,19 @@
   <link rel="apple-touch-icon" href="Architecture%20and%20construction.png" />
 
   <!-- SEO / search engine -->
-  <meta name="description" content="AMONTON is a Barcelona-based architecture and construction studio crafting exceptional design experiences — residential, commercial and bespoke spaces." />
-  <link rel="canonical" href="https://amonton.es/" />
+  <meta name="description" content="Selected work by AMONTON — a Barcelona-based architecture and construction studio: residential, commercial and bespoke spaces." />
+  <link rel="canonical" href="https://amonton.es/work.html" />
 
   <!-- Open Graph / social & search previews -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AMONTON" />
-  <meta property="og:title" content="AMONTON — Architecture &amp; Construction" />
-  <meta property="og:description" content="A Barcelona-based architecture and construction studio crafting exceptional design experiences." />
+  <meta property="og:title" content="Work — AMONTON" />
+  <meta property="og:description" content="Selected work by AMONTON, a Barcelona-based architecture and construction studio." />
   <meta property="og:image" content="https://amonton.es/Architecture%20and%20construction.png" />
-  <meta property="og:url" content="https://amonton.es/" />
+  <meta property="og:url" content="https://amonton.es/work.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AMONTON — Architecture &amp; Construction" />
-  <meta name="twitter:description" content="A Barcelona-based architecture and construction studio crafting exceptional design experiences." />
+  <meta name="twitter:title" content="Work — AMONTON" />
+  <meta name="twitter:description" content="Selected work by AMONTON, a Barcelona-based architecture and construction studio." />
   <meta name="twitter:image" content="https://amonton.es/Architecture%20and%20construction.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -720,93 +720,38 @@
       }
     }
 
+    /* ---- Work page: no hero slider, so keep a solid header from the top ---- */
+    body {
+      padding-top: 140px; /* clear the fixed header */
+    }
+
+    .site-header {
+      background-color: #f5f1e5 !important; /* solid cream header */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .site-header .logo-img { filter: brightness(0) !important; } /* dark logo */
+    .site-header .main-nav a { color: #1a1a1a !important; }
+    .site-header .hamburger-menu .bar { background-color: #1a1a1a !important; }
+
+    .work-page .section-title {
+      padding-top: 40px; /* header spacing handled by body padding */
+    }
+
+    @media (max-width: 768px) {
+      body { padding-top: 90px; }
+    }
+
   </style>
 <script src="common_functions.js"></script>
 </head>
-<body>
+<body class="work-page">
 <base id="baseTag" href="/">
 
 <div id="header-placeholder"></div>
 
-<div class="slider" id="main-slider">
-  <div class="slide-track" id="slide-track">
-    <!-- Slides will be injected here by JavaScript -->
-  </div>
-  <div class="dots" id="slider-dots">
-    <!-- Dots will be injected here by JavaScript -->
-  </div>
-
-  <!-- Slider Navigation Arrows -->
-  <button class="slider-arrow left" id="left-arrow" aria-label="Previous slide">
-    <svg viewBox="0 0 24 24">
-      <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
-    </svg>
-  </button>
-  <button class="slider-arrow right" id="right-arrow" aria-label="Next slide">
-    <svg viewBox="0 0 24 24">
-      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
-    </svg>
-  </button>
-</div>
-
-
-  <!-- 
-  <h2 class="section-title">Latest Work</h2> 
-  <main class="project-list" id="projectList">
+  <!-- <h2 class="section-title" id="work-section">WORK</h2> -->
+  <main class="project-list" id="CategoryProjectList">
   </main>
-
-  <section class="divider-section" id="dividerSection">
-    </section> -->
-
-
-  <!-- Gallery Section (content controlled via gallery/gallery.json) -->
-  <h2 class="section-title" id="galleryTitle">GALLERY</h2>
-  <section class="gallery-section" id="gallerySection" aria-label="Gallery">
-    <div class="gallery-grid" id="galleryGrid">
-      <!-- Gallery items injected here by JavaScript -->
-    </div>
-  </section>
-
-  <section class="divider-section" id="dividerSection1">
-  </section>
-
-    <!-- About Section -->
-    <section id="about-section" class="about-section">
-        <h2>About Us</h2>
-        <p>Welcome to AMONTON, a creative studio dedicated to crafting exceptional design experiences. We believe that good design is not just about aesthetics, but about creating functional, intuitive, and impactful solutions that resonate with people.</p>
-        <p>Our team is composed of passionate designers, architects, and visionaries who bring diverse perspectives and expertise to every project. From conceptualization to execution, we meticulously blend innovation with timeless principles to deliver spaces and products that stand out.</p>
-        <p>With years of experience in the industry, we have had the privilege of working on a wide range of projects, from residential and commercial architecture to bespoke furniture design and digital interfaces. Our commitment to excellence and client satisfaction drives us to push boundaries and exceed expectations.</p>
-        <p>At AMONTON, we are constantly exploring new materials, technologies, and methodologies to ensure our work remains at the forefront of design. We are passionate about transforming ideas into tangible realities and creating lasting value for our clients and the communities we serve.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact-section" class="contact-section">
-        <h2>Contact</h2>
-        <p>We're always happy to hear from you. Find our office details and general inquiry contact below.</p>
-        <div class="contact-info-container" style="align-items: center;">
-            <div class="contact-block" style="text-align: center;">
-                <h3>Barcelona Office</h3>
-                <p>Amonton Design Studio</p>
-                <!-- <p>Barcelona Address </p>
-                <p>Spain</p> -->
-                <p>Phone: <a href="tel:+4512345678">+34 635 98 73 59</a></p>
-                <p>Email: <a href="mailto:cph@amonton.com">info@amonton.es</a></p>
-            </div>
-            <!-- <div class="contact-block">
-                <h3>New York Office</h3>
-                <p>Amonton Design Studio</p>
-                <p>456 Broadway Ave</p>
-                <p>New York, NY 10012</p>
-                <p>USA</p>
-                <p>Phone: <a href="tel:+12125551234">+1 (212) 555-1234</a></p>
-                <p>Email: <a href="mailto:ny@amonton.com">ny@amonton.com</a></p>
-            </div> -->
-        </div>
-        <div class="contact-inquiry">
-            <p>For general inquiries, please reach out to:</p>
-            <p><a href="mailto:info@amonton.com">info@amonton.es</a></p>
-        </div>
-    </section>
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
@@ -1329,13 +1274,10 @@
       startAutoSlide();
     }
 
-    // Call loadSlider when the DOM is fully loaded
+    // Work page: only the project grid + divider + header/footer.
     document.addEventListener('DOMContentLoaded', () => {
         loadHeader();
-        loadSlider(); // Load the main slider first
-        loadGallery('gallery/gallery.json', 'galleryGrid'); // Gallery (WORK now lives on work.html)
-        loadProjects('projects/index.json', 'projectList'); // Then load projects
-        loadDivider(1, 'dividerSection1'); // "Explore Our Vision" divider
+        loadProjects('projects/arch.json', 'CategoryProjectList'); // Load the work projects
         loadFooter();
     });
 

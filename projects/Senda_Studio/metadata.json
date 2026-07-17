@@ -1,14 +1,31 @@
 {
   "title": "Senda Studio",
-  "category": ["RETAIL"],
+  "category": [
+    "RETAIL"
+  ],
   "year": "2025",
-  "thumbnail_photo": "photos/26 01 27_SENDA STUDIO_28.png",
+  "thumbnail_photo": "photos/SENDA STUDIO_28.png",
   "thumbnail_desc": "New Yoga Studio in the Heart of Barcelona.",
   "description": "The first thing you notice when you step inside is how clean and beautifully sculpted the space feels—it almost makes you want to take off your shoes. Fortunately, there is a small vitrine at the entrance where you can leave your shoes. Many of the walls retain the textures of the original brick, as if the microcement had been poured into the space and then frozen, capturing the history of the place within its surfaces.",
   "content": [
-    {"type": "header-img", "size": 1, "src": "photos/26 01 27_SENDA STUDIO_02.PNG", "alt": ""},
-    {"type": "img", "size": 2, "src": "photos/26 01 27_SENDA STUDIO_26.PNG", "alt": ""},
-    {"type": "img", "size": 2, "src": "photos/26 01 27_SENDA STUDIO_21.PNG", "alt": ""}
+    {
+      "type": "header-img",
+      "size": 1,
+      "src": "photos/SENDA STUDIO_02.PNG",
+      "alt": ""
+    },
+    {
+      "type": "img",
+      "size": 2,
+      "src": "photos/SENDA STUDIO_26.PNG",
+      "alt": ""
+    },
+    {
+      "type": "img",
+      "size": 2,
+      "src": "photos/SENDA STUDIO_21.PNG",
+      "alt": ""
+    }
   ],
   "location": "Barcelona",
   "Photography": "Aitor Estévez Olaizola"
