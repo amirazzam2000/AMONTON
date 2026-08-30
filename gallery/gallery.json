@@ -6,15 +6,18 @@
       "items": [
         {
           "photo": "g1.png",
-          "title": "Muntaner"
+          "title": "Muntaner",
+          "subtitle": "A fully renovated apartment in Barcelona for a private client."
         },
         {
           "photo": "g2.jpg",
-          "title": "Ago Pilates"
+          "title": "Ago Pilates",
+          "subtitle": "New Pilates studio in the centre of Barcelona."
         },
         {
           "photo": "g3.jpg",
-          "title": "Avenir"
+          "title": "Avenir",
+          "subtitle": "A fully renovated apartment in Barcelona."
         }
       ]
     },
@@ -22,11 +25,13 @@
       "items": [
         {
           "photo": "g4.jpg",
-          "title": "Estepona"
+          "title": "Estepona",
+          "subtitle": "Interior design and renovation of a modern apartment in Estepona."
         },
         {
           "photo": "g5.jpg",
-          "title": "Senda Studio"
+          "title": "Senda Studio",
+          "subtitle": "New yoga studio in the heart of Barcelona."
         }
       ]
     },
@@ -34,7 +39,8 @@
       "items": [
         {
           "photo": "g6.png",
-          "title": "Casa Calpes"
+          "title": "Casa Calpes",
+          "subtitle": "A home with soul in the heart of the most authentic Poblenou."
         }
       ]
     }
