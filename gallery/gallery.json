@@ -5,19 +5,19 @@
     {
       "items": [
         {
-          "photo": "g1.png",
-          "title": "Muntaner",
-          "subtitle": "A fully renovated apartment in Barcelona for a private client."
+          "photo": "g1.jpg",
+          "title": "Holded",
+          "subtitle": "07.05.2026"
         },
         {
           "photo": "g2.jpg",
           "title": "Ago Pilates",
-          "subtitle": "New Pilates studio in the centre of Barcelona."
+          "subtitle": "05.03.2026"
         },
         {
           "photo": "g3.jpg",
           "title": "Avenir",
-          "subtitle": "A fully renovated apartment in Barcelona."
+          "subtitle": "15.04.2026"
         }
       ]
     },
@@ -26,12 +26,12 @@
         {
           "photo": "g4.jpg",
           "title": "Estepona",
-          "subtitle": "Interior design and renovation of a modern apartment in Estepona."
+          "subtitle": "18.09.2025"
         },
         {
           "photo": "g5.jpg",
-          "title": "Senda Studio",
-          "subtitle": "New yoga studio in the heart of Barcelona."
+          "title": "Holded",
+          "subtitle": "07.05.2026"
         }
       ]
     },
@@ -39,8 +39,55 @@
       "items": [
         {
           "photo": "g6.png",
-          "title": "Casa Calpes",
-          "subtitle": "A home with soul in the heart of the most authentic Poblenou."
+          "title": "Senda Studio",
+          "subtitle": "01.09.2025"
+        }
+      ]
+    }, 
+    {
+      "items": [
+        {
+          "photo": "g7.jpg",
+          "title": "Muntaner",
+          "subtitle": "31.07.2025"
+        },
+        {
+          "photo": "g8.jpg",
+          "title": "Casa Ancora",
+          "subtitle": "02.07.2026"
+        },
+        {
+          "photo": "g9.jpg",
+          "title": "Avenir",
+          "subtitle": "15.04.2026"
+        }
+      ]
+    },
+    {
+      "items": [
+        {
+          "photo": "g10.jpg",
+          "title": "Casa Nido",
+          "subtitle": "07.05.2026"
+        },
+        {
+          "photo": "g11.jpg",
+          "title": "Holded",
+          "subtitle": "07.05.2026"
+        }
+      ]
+    },
+    {
+      "items": [
+        {
+          "photo": "g12.jpg",
+          "title": "Holded",
+          "subtitle": "07.05.2026"
+        },
+        {
+          "photo": "g13.jpg",
+          "title": "Ago Pilates",
+          "subtitle": "05.03.2026"
         }
       ]
     }
