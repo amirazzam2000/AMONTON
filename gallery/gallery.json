@@ -24,7 +24,7 @@
     {
       "items": [
         {
-          "photo": "g4.jpg",
+          "photo": "g4.Webp",
           "title": "Estepona",
           "subtitle": "18.09.2025"
         },
@@ -38,7 +38,7 @@
     {
       "items": [
         {
-          "photo": "g6.png",
+          "photo": "g6.webp",
           "title": "Senda Studio",
           "subtitle": "01.09.2025"
         }
@@ -47,12 +47,12 @@
     {
       "items": [
         {
-          "photo": "g7.jpg",
+          "photo": "g7.webp",
           "title": "Muntaner",
           "subtitle": "31.07.2025"
         },
         {
-          "photo": "g8.jpg",
+          "photo": "g8.webp",
           "title": "Casa Ancora",
           "subtitle": "02.07.2026"
         },
@@ -67,12 +67,12 @@
       "items": [
         {
           "photo": "g10.jpg",
-          "title": "Casa Nido",
-          "subtitle": "07.05.2026"
+          "title": "Ago Pilates",
+          "subtitle": "05.03.2026"
         },
         {
           "photo": "g11.jpg",
-          "title": "Holded",
+          "title": "Casa Nido",
           "subtitle": "07.05.2026"
         }
       ]

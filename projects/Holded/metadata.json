@@ -1,0 +1,16 @@
+{
+  "title": "Holded",
+  "category": ["OFFICE"],
+  "year": "2026",
+  "thumbnail_photo": "photos/2604240057z.jpg",
+  "thumbnail_desc": "Renovation of Holded’s new offices",
+  "description": "The refurbishment of Holded’s new offices aims to create a strong identity that reflects the creative and dynamic atmosphere of a young and ambitious team. The design seeks to create an inspiring and energetic environment that supports both collaboration and productivity, while taking full advantage of the stunning views over the Port of Barcelona.",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/2604240057z.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/2604240305z.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/2604240430z.jpg", "alt": ""},
+    {"type": "img", "size": 4, "src": "photos/2604240640z.jpg", "alt": ""}
+  ],
+  "location": "Barcelona",
+  "photography": "Aitor Estévez Olaizola"
+}

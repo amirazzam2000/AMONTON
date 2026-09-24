@@ -2,15 +2,15 @@
   "title": "Ago Pilates",
   "category": ["RETAIL"],
   "year": "2026",
-  "thumbnail_photo": "photos/2602210835z.jpg",
+  "thumbnail_photo": "photos/2602210835z.webp",
   "thumbnail_desc": "New Pilates studio in the centre of Barcelona.",
   "description": "Ago is a new Pilates studio in Barcelona that combines the elegance of a modernist space—kept in white—with a bold, energetic pop-culture intervention. It invites both local and international Pilates enthusiasts to discover a fresh, contemporary brand aimed at making Pilates accessible to everyone.",
   "content": [
-    {"type": "header-img", "size": 1, "src": "photos/2602210835z.jpg", "alt": ""},
-    {"type": "img", "size": 2, "src": "photos/2602210502z.jpg", "alt": ""},
-    {"type": "img", "size": 2, "src": "photos/2602211375z.jpg", "alt": ""},
-    {"type": "img", "size": 4, "src": "photos/2602211065z.jpg", "alt": ""}
+    {"type": "header-img", "size": 1, "src": "photos/2602210835z.webp", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/2602210502z.webp", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/2602211375z.webp", "alt": ""},
+    {"type": "img", "size": 4, "src": "photos/2602211065z.webp", "alt": ""}
   ],
-  "location": "Zinonos 37, Athina, Greece",
-  "Photography": "Amonton"
+  "location": "Carrer de Girona, 22, Barcelona",
+  "photography": "Aitor Estévez Olaizola"
 }

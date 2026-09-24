@@ -1,0 +1,17 @@
+{
+  "title": "Casa Nido",
+  "category": ["HOSTEL"],
+  "year": "2026",
+  "thumbnail_photo": "photos/2605150010z.jpg",
+  "thumbnail_desc": "A fully renovated Hostel in Av.Diagonal Barcelona.",
+  "description": "Designed by Cristina Ortega, C2OR STUDIO. The challenge was to create a balance between a functional, efficient hotel and a boutique atmosphere, without falling into an overly luxurious or polished aesthetic. A great example of this balance can be found in the dormitories, where parts of the original brick walls were preserved, adding character and authenticity to the spaces. The shared bathrooms also contribute to the overall identity of the project, combining bold paint colours with ceramic tiles to create a distinctive yet understated atmosphere.",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/2605150010z.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/2605150644z.jpg", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/2605150780z.jpg", "alt": ""},
+    {"type": "img", "size": 4, "src": "photos/2605151182z.jpg", "alt": ""}
+  ],
+  "location": "Av. Diagonal, Barcelona",
+  "photography": "Aitor Estévez Olaizola"
+  
+}

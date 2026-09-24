@@ -1,0 +1,17 @@
+{
+  "title": "Ancora 8",
+  "category": ["RESIDETIAL"],
+  "year": "2025",
+  "thumbnail_photo": "photos/1782979481000_R0000081.webp",
+  "thumbnail_desc": "A fully renovated apartment in Vilanova i la Geltrú.",
+  "description": "The refurbishment of Ap. Ancora is closer to a wine museum than a conventional family home. The design carefully highlights the apartment’s original ceramic vaults and timber beams, as well as the exposed brick walls, preserving the essence and character of the existing architecture while reinforcing the apartment with a new metal structure. The lighting and plasterboard interventions are conceived as a subtle frame for the house’s most beautiful original elements, enhancing them without taking away from their presence.",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/1782979361000_R0000074.webp", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/1782979272000_R0000068.webp", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/1782979272000_R0000069.webp", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/1782979481000_R0000081.webp", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/1782979069000_R0000059.webp", "alt": ""}
+  ],
+  "location": "Private",
+  "photography": "Amonton"
+}
