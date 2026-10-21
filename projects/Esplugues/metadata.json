@@ -1,0 +1,16 @@
+{
+  "title": "Casa HA",
+  "category": ["RESIDENTIAL"],
+  "year": "2026",
+  "thumbnail_photo": "photos/R0001002.webp",
+  "thumbnail_desc": "Terrace above Barcelona.",
+  "description": "Overlooking the city of Barcelona, the project is inspired by Mediterranean terraces and slabs. It paves a smooth path from the ground up to the pool, weaving together seating, stairs and planters along the way. All the new elements are sculpted in sandy tones that echo the colors of Mediterranean sunsets, creating a soft frame for a delicate selection of plants and lighting.",
+  "content": [
+    {"type": "header-img", "size": 1, "src": "photos/R0000994.webp", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/R0001021.webp", "alt": ""},
+    {"type": "img", "size": 2, "src": "photos/R0000935.webp", "alt": ""},
+    {"type": "img", "size": 4, "src": "photos/R0001013.webp", "alt": ""}
+  ],
+  "location": "Private, Barcelona",
+  "photography": "Amonton"
+}
