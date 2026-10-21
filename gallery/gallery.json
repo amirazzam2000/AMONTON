@@ -29,9 +29,9 @@
           "subtitle": "18.09.2025"
         },
         {
-          "photo": "g5.jpg",
-          "title": "Holded",
-          "subtitle": "07.05.2026"
+          "photo": "r0001039.webp",
+          "title": "Casa HA",
+          "subtitle": "14.09.2026"
         }
       ]
     },
@@ -80,15 +80,21 @@
     {
       "items": [
         {
-          "photo": "g12.jpg",
-          "title": "Holded",
-          "subtitle": "07.05.2026"
+          "photo": "IMG_3597.webp",
+          "title": "Casa Milano",
+          "subtitle": "12.04.2024"
         },
         {
-          "photo": "g13.jpg",
-          "title": "Ago Pilates",
-          "subtitle": "05.03.2026"
+          "photo": "4.webp",
+          "title": "by Bigshots",
+          "subtitle": "07.05.2024"
+        },
+        {
+          "photo": "R0000943.webp",
+          "title": "Casa HA",
+          "subtitle": "14.09.2026"
         }
+
       ]
     }
   ]
